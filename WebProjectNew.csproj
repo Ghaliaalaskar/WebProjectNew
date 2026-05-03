@@ -67,13 +67,85 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="changepassword.aspx" />
+    <Content Include="myaccount.aspx" />
+    <Content Include="mybooking.aspx" />
+    <Content Include="userbookingdetails.aspx" />
+    <Content Include="userbookinghistory.aspx" />
+    <Content Include="usercancelbooking.aspx" />
+    <Content Include="usereditbooking.aspx" />
+    <Content Include="userlogout.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="changepassword.aspx.cs">
+      <DependentUpon>changepassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="changepassword.aspx.designer.cs">
+      <DependentUpon>changepassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="myaccount.aspx.cs">
+      <DependentUpon>myaccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="myaccount.aspx.designer.cs">
+      <DependentUpon>myaccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mybooking.aspx.cs">
+      <DependentUpon>mybooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mybooking.aspx.designer.cs">
+      <DependentUpon>mybooking.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.Master.cs">
+      <DependentUpon>User.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User.Master.designer.cs">
+      <DependentUpon>User.Master</DependentUpon>
+    </Compile>
+    <Compile Include="userbookingdetails.aspx.cs">
+      <DependentUpon>userbookingdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userbookingdetails.aspx.designer.cs">
+      <DependentUpon>userbookingdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userbookinghistory.aspx.cs">
+      <DependentUpon>userbookinghistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userbookinghistory.aspx.designer.cs">
+      <DependentUpon>userbookinghistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="usercancelbooking.aspx.cs">
+      <DependentUpon>usercancelbooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercancelbooking.aspx.designer.cs">
+      <DependentUpon>usercancelbooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="usereditbooking.aspx.cs">
+      <DependentUpon>usereditbooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usereditbooking.aspx.designer.cs">
+      <DependentUpon>usereditbooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userlogout.aspx.cs">
+      <DependentUpon>userlogout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userlogout.aspx.designer.cs">
+      <DependentUpon>userlogout.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="User.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

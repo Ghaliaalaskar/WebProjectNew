@@ -1,0 +1,92 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="WebProjectNew.User" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            height: 829px;
+        }
+        .auto-style2 {
+            width: 275px;
+            height: 150px;
+        }
+        .auto-style3 {
+            width: 275px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+        </div>
+        <table align="center" cellpadding="3" cellspacing="3" class="auto-style1">
+            <tr>
+                <td class="auto-style2" style="border-color: #FFFFFF; background-color: #8B77A2"></td>
+                <td rowspan="2">
+                    <p>
+                        &nbsp;</p>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <p>
+                    <br />
+                </p>
+                <p>
+                </p>
+                <p>
+                </p>
+                <p>
+                </p>
+                <p>
+                </p>
+                <p>
+                </p>
+                <p>
+                </p>
+                <p>
+                </p>
+                <p>
+                </p>
+                <p>
+                </p>
+            </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style3" style="border-color: #FFFFFF; background-color: #8B77A2">
+                    <asp:HyperLink ID="HyperLink1" runat="server">HyperLink</asp:HyperLink>
+                    <br />
+                    <br />
+&nbsp;<br />
+                    <asp:HyperLink ID="HyperLink2" runat="server">HyperLink</asp:HyperLink>
+&nbsp;
+                    <br />
+                    <br />
+                    <br />
+                    <asp:HyperLink ID="HyperLink3" runat="server">HyperLink</asp:HyperLink>
+                    <br />
+                    <br />
+&nbsp;
+                    <br />
+                    <asp:HyperLink ID="HyperLink4" runat="server">HyperLink</asp:HyperLink>
+&nbsp;<br />
+                    <br />
+                    <br />
+                    <asp:HyperLink ID="HyperLink5" runat="server">HyperLink</asp:HyperLink>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+&nbsp;<asp:HyperLink ID="HyperLink6" runat="server">HyperLink</asp:HyperLink>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
