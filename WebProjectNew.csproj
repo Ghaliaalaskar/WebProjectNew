@@ -71,6 +71,10 @@
     <Content Include="aboutus.jpg" />
     <Content Include="AdminDashboard.aspx" />
     <Content Include="AppointmentConfirmed.aspx" />
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="BabyDetailsGuest.aspx" />
     <Content Include="BabyShowerDetails.aspx" />
     <Content Include="BookYourAppointment.aspx" />
