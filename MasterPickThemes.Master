@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPickThemes.Master.cs" Inherits="WebProjectNew.MasterPickThemes" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Pick Themes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #F4F7FC;
+        }
+
+        .navbar-top {
+            background-color: #70677A;  
+            height: 70px;
+            display: flex;
+            justify-content: flex-start; 
+            align-items: center;
+            padding: 0 50px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: #D1C4E9; 
+            transform: translateY(-1px);
+        }
+
+        .main-container {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 80vh;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="navbar-top">
+            <nav class="nav-links">
+                <asp:HyperLink ID="lnkHome" runat="server" NavigateUrl="~/PickTheme.aspx">
+                    <i class="fas fa-home"></i> Home
+                </asp:HyperLink>
+                
+                <asp:HyperLink ID="lnkPick" runat="server" NavigateUrl="~/PickTheme.aspx">
+                    <i class="fas fa-magic"></i> Pick Themes
+                </asp:HyperLink>
+                
+                <asp:HyperLink ID="lnkDash" runat="server" NavigateUrl="UserDashboard.aspx">
+                    <i class="fas fa-chart-line"></i> My Dashboard
+                </asp:HyperLink>
+                
+                <asp:HyperLink ID="lnkLogout" runat="server" NavigateUrl="~/Logout.aspx">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </asp:HyperLink>
+            </nav>
+        </header>
+
+        <main class="main-container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+    </form>
+</body>
+</html>

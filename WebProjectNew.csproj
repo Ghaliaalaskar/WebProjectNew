@@ -68,17 +68,23 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminDashboard.aspx" />
+    <Content Include="AppointmentConfirmed.aspx" />
     <Content Include="BabyDetailsGuest.aspx" />
+    <Content Include="BabyShowerDetails.aspx" />
+    <Content Include="BookYourAppointment.aspx" />
     <Content Include="BridalDetailsGuest.aspx" />
+    <Content Include="BridalShowerDetails.aspx" />
     <Content Include="changepassword.aspx" />
     <Content Include="DiscoverThemes.aspx" />
     <Content Include="GradDetailsGuest.aspx" />
+    <Content Include="GraduationDetails.aspx" />
     <Content Include="images\admin-icon.png" />
     <Content Include="images\baby.jpg" />
     <Content Include="images\bride.jpg" />
     <Content Include="images\grad.jpg" />
     <Content Include="myaccount.aspx" />
     <Content Include="mybooking.aspx" />
+    <Content Include="PickTheme.aspx" />
     <Content Include="userbookingdetails.aspx" />
     <Content Include="userbookinghistory.aspx" />
     <Content Include="usercancelbooking.aspx" />
@@ -101,6 +107,13 @@
     <Compile Include="AdminMaster.Master.designer.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="AppointmentConfirmed.aspx.cs">
+      <DependentUpon>AppointmentConfirmed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppointmentConfirmed.aspx.designer.cs">
+      <DependentUpon>AppointmentConfirmed.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BabyDetailsGuest.aspx.cs">
       <DependentUpon>BabyDetailsGuest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -108,12 +121,33 @@
     <Compile Include="BabyDetailsGuest.aspx.designer.cs">
       <DependentUpon>BabyDetailsGuest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BabyShowerDetails.aspx.cs">
+      <DependentUpon>BabyShowerDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BabyShowerDetails.aspx.designer.cs">
+      <DependentUpon>BabyShowerDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BookYourAppointment.aspx.cs">
+      <DependentUpon>BookYourAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookYourAppointment.aspx.designer.cs">
+      <DependentUpon>BookYourAppointment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BridalDetailsGuest.aspx.cs">
       <DependentUpon>BridalDetailsGuest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="BridalDetailsGuest.aspx.designer.cs">
       <DependentUpon>BridalDetailsGuest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BridalShowerDetails.aspx.cs">
+      <DependentUpon>BridalShowerDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BridalShowerDetails.aspx.designer.cs">
+      <DependentUpon>BridalShowerDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="changepassword.aspx.cs">
       <DependentUpon>changepassword.aspx</DependentUpon>
@@ -136,12 +170,26 @@
     <Compile Include="GradDetailsGuest.aspx.designer.cs">
       <DependentUpon>GradDetailsGuest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GraduationDetails.aspx.cs">
+      <DependentUpon>GraduationDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GraduationDetails.aspx.designer.cs">
+      <DependentUpon>GraduationDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterDiscoverThemes.Master.cs">
       <DependentUpon>MasterDiscoverThemes.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MasterDiscoverThemes.Master.designer.cs">
       <DependentUpon>MasterDiscoverThemes.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPickThemes.Master.cs">
+      <DependentUpon>MasterPickThemes.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPickThemes.Master.designer.cs">
+      <DependentUpon>MasterPickThemes.Master</DependentUpon>
     </Compile>
     <Compile Include="myaccount.aspx.cs">
       <DependentUpon>myaccount.aspx</DependentUpon>
@@ -156,6 +204,13 @@
     </Compile>
     <Compile Include="mybooking.aspx.designer.cs">
       <DependentUpon>mybooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PickTheme.aspx.cs">
+      <DependentUpon>PickTheme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PickTheme.aspx.designer.cs">
+      <DependentUpon>PickTheme.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.Master.cs">
@@ -204,6 +259,7 @@
   <ItemGroup>
     <Content Include="AdminMaster.Master" />
     <Content Include="MasterDiscoverThemes.Master" />
+    <Content Include="MasterPickThemes.Master" />
     <None Include="packages.config" />
     <Content Include="User.Master" />
     <None Include="Web.Debug.config">
