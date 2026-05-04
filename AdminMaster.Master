@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.Master.cs" Inherits="WebProjectNew.AdminMaster" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Admin Master Page</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            height: 734px;
+            background-color: #70677A; 
+        }
+        .auto-style3 {
+            width: 235px;
+            height: 64px;
+            background-color: #70677A;
+            text-align: center;
+        }
+        .auto-style16 {
+            width: 235px;
+            text-align: center;
+            background-color: #70677A;
+            vertical-align: top;
+            padding-top: 20px;
+        }
+        .admin-link {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            display: block;
+            padding: 10px 0;
+            transition: background 0.3s;
+        }
+        .admin-link:hover {
+            background-color: #5a5263;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table cellpadding="5" cellspacing="5" class="auto-style1">
+            <tr>
+                <td class="auto-style3">
+                    <img src="images/admin-icon.png" alt="Admin" style="width: 68px; height: 68px; border-radius: 50%;" />
+                </td>
+                
+                <td rowspan="2" style="background-color: #FFFFFF; vertical-align: top; padding: 20px;">
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style16">
+                    <asp:HyperLink ID="admindashboard" runat="server" CssClass="admin-link" NavigateUrl="~/AdminDashboard.aspx">Admin Dashboard</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="manageusers" runat="server" CssClass="admin-link" NavigateUrl="~/ManageUsers.aspx">Manage Users</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="managethemes" runat="server" CssClass="admin-link" NavigateUrl="~/ManageThemes.aspx">Manage Themes</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="manageavailability" runat="server" CssClass="admin-link" NavigateUrl="~/ManageAvailability.aspx">Manage Availability</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="managebookings" runat="server" CssClass="admin-link" NavigateUrl="~/ManageBookings.aspx">Manage Bookings</asp:HyperLink>
+                    <br /><br /><br />
+                    <asp:HyperLink ID="logout" runat="server" CssClass="admin-link" NavigateUrl="~/Logout.aspx">Log Out</asp:HyperLink>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
