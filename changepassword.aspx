@@ -45,7 +45,7 @@
                 <h3><span class="auto-style7">Your password
                     <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-                    <asp:TextBox ID="TextBox1" runat="server" BorderStyle="Solid" BorderWidth="1px" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox1" runat="server" BorderStyle="Solid" BorderWidth="1px" TextMode="Password" Width="200px"></asp:TextBox>
                 </h3>
             </td>
             <td class="auto-style10">
@@ -57,7 +57,7 @@
                 <h3><span class="auto-style7">New password
                     <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-                    <asp:TextBox ID="TextBox2" runat="server" BorderStyle="Solid" BorderWidth="1px" CssClass="auto-style8" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox2" runat="server" BorderStyle="Solid" BorderWidth="1px" CssClass="auto-style8" TextMode="Password" Width="200px"></asp:TextBox>
                 </h3>
             </td>
             <td class="auto-style10">
@@ -69,7 +69,7 @@
                 <h3><span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; confirm new password </span>
                     <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:TextBox ID="TextBox3" runat="server" BorderStyle="Solid" BorderWidth="1px" CssClass="auto-style8" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox3" runat="server" BorderStyle="Solid" BorderWidth="1px" CssClass="auto-style8" TextMode="Password" Width="200px"></asp:TextBox>
                     <br />
                 </h3>
             </td>
@@ -82,9 +82,9 @@
         </tr>
         <tr>
             <td class="auto-style6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Button2" runat="server" Text="Button" />
+                <asp:Button ID="Button2" runat="server" BorderStyle="None" ForeColor="#87779A" Text="Cancel" Width="100px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Button3" runat="server" Text="Button" />
+                <asp:Button ID="Button3" runat="server" BackColor="#87779A" BorderStyle="None" ForeColor="White" Text="Change" Width="100px" />
                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="Label1" runat="server" ForeColor="#006600"></asp:Label>
