@@ -26,9 +26,7 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style6" style="text-align: right">&nbsp;&nbsp;&nbsp; serach&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="TextBox1" runat="server" BackColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" Height="22px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+            <td class="auto-style6" style="text-align: right">&nbsp;</td>
         </tr>
         <tr>
             <td>

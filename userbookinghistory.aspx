@@ -28,9 +28,7 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style5">&nbsp;&nbsp;&nbsp; serach&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="TextBox1" runat="server" BackColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" Height="22px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+            <td class="auto-style5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
