@@ -84,6 +84,7 @@
     <Content Include="BridalShowerDetails.aspx" />
     <Content Include="changepassword.aspx" />
     <Content Include="DiscoverThemes.aspx" />
+    <Content Include="EditgradThemes.aspx" />
     <Content Include="EditUser.aspx" />
     <Content Include="GradDetailsGuest.aspx" />
     <Content Include="GraduationDetails.aspx" />
@@ -199,6 +200,13 @@
     </Compile>
     <Compile Include="DiscoverThemes.aspx.designer.cs">
       <DependentUpon>DiscoverThemes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditgradThemes.aspx.cs">
+      <DependentUpon>EditgradThemes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditgradThemes.aspx.designer.cs">
+      <DependentUpon>EditgradThemes.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditUser.aspx.cs">
       <DependentUpon>EditUser.aspx</DependentUpon>
