@@ -89,6 +89,7 @@
     <Content Include="images\bride.jpg" />
     <Content Include="images\grad.jpg" />
     <Content Include="login.aspx" />
+    <Content Include="ManageUser.aspx" />
     <Content Include="myaccount.aspx" />
     <Content Include="mybooking.aspx" />
     <Content Include="PickTheme.aspx" />
@@ -201,6 +202,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUser.aspx.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageUser.aspx.designer.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterDiscoverThemes.Master.cs">
       <DependentUpon>MasterDiscoverThemes.Master</DependentUpon>
