@@ -101,7 +101,7 @@
     <Content Include="ManageAvailability.aspx" />
     <Content Include="ManageBookings.aspx" />
     <Content Include="ManageThemes.aspx" />
-    <Content Include="ManageUser.aspx" />
+    <Content Include="ManageUsers.aspx" />
     <Content Include="myaccount.aspx" />
     <Content Include="mybooking.aspx" />
     <Content Include="PickTheme.aspx" />
@@ -299,12 +299,12 @@
     <Compile Include="ManageThemes.aspx.designer.cs">
       <DependentUpon>ManageThemes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ManageUser.aspx.cs">
-      <DependentUpon>ManageUser.aspx</DependentUpon>
+    <Compile Include="ManageUsers.aspx.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ManageUser.aspx.designer.cs">
-      <DependentUpon>ManageUser.aspx</DependentUpon>
+    <Compile Include="ManageUsers.aspx.designer.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterDiscoverThemes.Master.cs">
       <DependentUpon>MasterDiscoverThemes.Master</DependentUpon>
