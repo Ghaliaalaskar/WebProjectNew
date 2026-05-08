@@ -14,8 +14,6 @@ margin-top:35px;
 font-family:Georgia;
 ">
 
-<!-- TITLE -->
-
 <div style="
 width:851px;
 height:62px;
@@ -31,8 +29,6 @@ Edit Availability
 
 </div>
 
-<!-- MAIN BOX -->
-
 <div style="
 width:620px;
 margin-left:70px;
@@ -40,8 +36,6 @@ background-color:#70677A;
 color:white;
 font-size:20px;
 ">
-
-<!-- TOP HEADER -->
 
 <div style="
 height:62px;
@@ -56,8 +50,6 @@ Edit Availability
 
 </div>
 
-<!-- CONTENT -->
-
 <div style="
 padding-top:38px;
 padding-left:35px;
@@ -65,16 +57,8 @@ padding-right:35px;
 padding-bottom:32px;
 ">
 
-<!-- Theme -->
-
 <div style="margin-bottom:22px;">
-
-<label style="
-display:inline-block;
-width:120px;
-">
-Theme:
-</label>
+<label style="display:inline-block; width:120px;">Theme:</label>
 
 <select style="
 width:380px;
@@ -85,27 +69,18 @@ background-color:white;
 border:1px solid gray;
 ">
 
+<option>Select Theme:</option>
 <option>Baby Shower</option>
 <option>Bridal Shower</option>
 <option>Graduation</option>
 
 </select>
-
 </div>
 
-<!-- Date -->
-
 <div style="margin-bottom:22px;">
-
-<label style="
-display:inline-block;
-width:120px;
-">
-Date:
-</label>
+<label style="display:inline-block; width:120px;">Date:</label>
 
 <input type="text"
-value="12/5/2026"
 style="
 width:370px;
 height:30px;
@@ -115,19 +90,10 @@ background-color:white;
 border:1px solid gray;
 padding-left:8px;
 " />
-
 </div>
 
-<!-- Time -->
-
 <div style="margin-bottom:22px;">
-
-<label style="
-display:inline-block;
-width:120px;
-">
-Time:
-</label>
+<label style="display:inline-block; width:120px;">Time:</label>
 
 <select style="
 width:380px;
@@ -138,24 +104,16 @@ background-color:white;
 border:1px solid gray;
 ">
 
-<option>7:00 PM</option>
+<option>Select Time:</option>
 <option>6:00 PM</option>
+<option>7:00 PM</option>
 <option>8:00 PM</option>
 
 </select>
-
 </div>
 
-<!-- Status -->
-
 <div style="margin-bottom:32px;">
-
-<label style="
-display:inline-block;
-width:120px;
-">
-Status:
-</label>
+<label style="display:inline-block; width:120px;">Status:</label>
 
 <select style="
 width:380px;
@@ -166,14 +124,12 @@ background-color:white;
 border:1px solid gray;
 ">
 
-<option>Not Available</option>
+<option>Select Status:</option>
 <option>Available</option>
+<option>Not Available</option>
 
 </select>
-
 </div>
-
-<!-- BUTTONS -->
 
 <div style="text-align:right;">
 
