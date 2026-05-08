@@ -15,14 +15,13 @@ font-family:Georgia;
 ">
 
 <div style="
-width:851px;
+width:850px;
 height:62px;
 background-color:#70677A;
 color:white;
 font-size:42px;
 line-height:62px;
 padding-left:28px;
-margin-bottom:0px;
 ">
 
 Manage Themes
@@ -30,94 +29,151 @@ Manage Themes
 </div>
 
 <table style="
-width:880px;
+width:850px;
 border-collapse:collapse;
-margin-top:0px;
 background-color:#70677A;
 color:white;
-font-size:20px;
+font-size:18px;
 text-align:center;
-font-family:Georgia;
 ">
 
 <tr style="
-background-color:#d5cedc;
+background-color:#e5dfeb;
 color:black;
-height:68px;
-font-size:21px;
+height:55px;
+font-weight:bold;
 ">
 
-<th>Themes Name</th>
-<th>Duration</th>
-<th>Price</th>
-<th>Actions</th>
+<td>Themes Name</td>
+<td>Duration</td>
+<td>Price</td>
+<td>Actions</td>
 
 </tr>
 
 <tr style="height:90px;">
-<td>Baby Shower</td>
-<td>3 hours</td>
-<td>1800 SAR</td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
 <td>
-<a href="EditTheme.aspx" style="color:white; text-decoration:none;">Edit</a>
-&nbsp;&nbsp;
-<a href="#" style="color:white; text-decoration:none;">Delete</a>
-</td>
-</tr>
 
-<tr style="height:90px;">
-<td>Bridal Shower</td>
-<td>4 hours</td>
-<td>2500 SAR</td>
-<td>
-<a href="EditTheme.aspx" style="color:white; text-decoration:none;">Edit</a>
-&nbsp;&nbsp;
-<a href="#" style="color:white; text-decoration:none;">Delete</a>
-</td>
-</tr>
-
-<tr style="height:90px;">
-<td>Graduation</td>
-<td>5 hours</td>
-<td>2000SAR</td>
-<td>
-<a href="EditTheme.aspx" style="color:white; text-decoration:none;">Edit</a>
-&nbsp;&nbsp;
-<a href="#" style="color:white; text-decoration:none;">Delete</a>
-</td>
-</tr>
-
-</table>
-
-<div style="
-width:880px;
-text-align:right;
-margin-top:0px;
-background-color:#d9d9d9;
-padding-top:12px;
-padding-bottom:12px;
-">
-
-<a href="AddTheme.aspx"
+<a href="EditbabyThemes.aspx"
 style="
-background-color:#eeeeee;
-border:1px solid gray;
-padding:8px 16px;
+color:white;
 text-decoration:none;
-color:black;
-font-size:17px;
-font-family:Georgia;
-display:inline-flex;
-align-items:center;
-gap:4px;
-margin-right:12px;
+">
+Edit
+</a>
+
+&nbsp;&nbsp;
+
+<a href="#"
+style="
+color:white;
+text-decoration:none;
+">
+Delete
+</a>
+
+</td>
+
+</tr>
+
+<tr style="height:90px;">
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td>
+
+<a href="EditbridelThemes.aspx"
+style="
+color:white;
+text-decoration:none;
+">
+Edit
+</a>
+
+&nbsp;&nbsp;
+
+<a href="#"
+style="
+color:white;
+text-decoration:none;
+">
+Delete
+</a>
+
+</td>
+
+</tr>
+
+<tr style="height:90px;">
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td>
+
+<a href="EditgradThemes.aspx"
+style="
+color:white;
+text-decoration:none;
+">
+Edit
+</a>
+
+&nbsp;&nbsp;
+
+<a href="#"
+style="
+color:white;
+text-decoration:none;
+">
+Delete
+</a>
+
+</td>
+
+</tr>
+
+<tr style="background-color:white;">
+
+<td colspan="4"
+style="
+text-align:right;
+padding:10px;
 ">
 
-<span> Add Themes</span>
+<a href="AddThemes.aspx">
+
+<input type="button"
+value="Add Themes"
+style="
+width:120px;
+height:35px;
+font-size:16px;
+font-family:Georgia;
+cursor:pointer;
+" />
 
 </a>
 
-</div>
+</td>
+
+</tr>
+
+</table>
 
 </div>
 
