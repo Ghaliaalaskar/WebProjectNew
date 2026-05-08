@@ -88,7 +88,7 @@
     <Content Include="EditAvailability.aspx" />
     <Content Include="EditBooking.aspx" />
     <Content Include="EditbrideTheme.aspx" />
-    <Content Include="EditbshowerTheme.aspx" />
+    <Content Include="EditTheme.aspx" />
     <Content Include="EditgradThemes.aspx" />
     <Content Include="EditUser.aspx" />
     <Content Include="GradDetailsGuest.aspx" />
@@ -236,12 +236,12 @@
     <Compile Include="EditbrideTheme.aspx.designer.cs">
       <DependentUpon>EditbrideTheme.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EditbshowerTheme.aspx.cs">
-      <DependentUpon>EditbshowerTheme.aspx</DependentUpon>
+    <Compile Include="EditTheme.aspx.cs">
+      <DependentUpon>EditTheme.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EditbshowerTheme.aspx.designer.cs">
-      <DependentUpon>EditbshowerTheme.aspx</DependentUpon>
+    <Compile Include="EditTheme.aspx.designer.cs">
+      <DependentUpon>EditTheme.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditgradThemes.aspx.cs">
       <DependentUpon>EditgradThemes.aspx</DependentUpon>

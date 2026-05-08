@@ -41,36 +41,99 @@ font-weight:bold;
 </tr>
 
 <tr style="height:90px;">
+
 <td></td>
+
 <td></td>
+
 <td></td>
+
 <td>
-<a href="EditbshowerTheme.aspx" style="color:white;text-decoration:none;">Edit</a>
+
+<a href="EditTheme.aspx"
+style="
+color:white;
+text-decoration:none;
+">
+Edit
+</a>
+
 &nbsp;&nbsp;
-<a href="#" style="color:white;text-decoration:none;">Delete</a>
+
+<a href="#"
+style="
+color:white;
+text-decoration:none;
+">
+Delete
+</a>
+
 </td>
+
 </tr>
 
 <tr style="height:90px;">
+
 <td></td>
+
 <td></td>
+
 <td></td>
+
 <td>
-<a href="EditbrideTheme.aspx" style="color:white;text-decoration:none;">Edit</a>
+
+<a href="EditTheme.aspx"
+style="
+color:white;
+text-decoration:none;
+">
+Edit
+</a>
+
 &nbsp;&nbsp;
-<a href="#" style="color:white;text-decoration:none;">Delete</a>
+
+<a href="#"
+style="
+color:white;
+text-decoration:none;
+">
+Delete
+</a>
+
 </td>
+
 </tr>
 
 <tr style="height:90px;">
+
 <td></td>
+
 <td></td>
+
 <td></td>
+
 <td>
-<a href="EditgradThemes.aspx" style="color:white;text-decoration:none;">Edit</a>
+
+<a href="EditTheme.aspx"
+style="
+color:white;
+text-decoration:none;
+">
+Edit
+</a>
+
 &nbsp;&nbsp;
-<a href="#" style="color:white;text-decoration:none;">Delete</a>
+
+<a href="#"
+style="
+color:white;
+text-decoration:none;
+">
+Delete
+</a>
+
 </td>
+
 </tr>
 
 <tr style="
@@ -78,12 +141,14 @@ height:70px;
 background:white;
 ">
 
-<td colspan="4" style="
+<td colspan="4"
+style="
 text-align:right;
 padding-right:15px;
 ">
 
 <a href="AddThemes.aspx"
+
 style="
 background:white;
 border:1px solid gray;
@@ -92,7 +157,9 @@ text-decoration:none;
 color:black;
 font-size:18px;
 ">
+
 Add Themes
+
 </a>
 
 </td>
