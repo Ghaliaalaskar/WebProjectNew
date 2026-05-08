@@ -15,14 +15,13 @@ font-family:Georgia;
 ">
 
 <div style="
-width:851px;
+width:850px;
 height:62px;
 background-color:#70677A;
 color:white;
 font-size:42px;
 line-height:62px;
 padding-left:28px;
-margin-bottom:0px;
 ">
 
 Manage Availability
@@ -30,110 +29,192 @@ Manage Availability
 </div>
 
 <table style="
-width:880px;
+width:850px;
 border-collapse:collapse;
-margin-top:0px;
 background-color:#70677A;
 color:white;
-font-size:20px;
+font-size:18px;
 text-align:center;
-font-family:Georgia;
 ">
 
 <tr style="
-background-color:#d5cedc;
+background-color:#e5dfeb;
 color:black;
-height:68px;
-font-size:21px;
+height:55px;
+font-weight:bold;
 ">
 
-<th>Themes Name</th>
-<th>Date</th>
-<th>Time</th>
-<th>Status</th>
-<th>Actions</th>
+<td>Themes Name</td>
+<td>Date</td>
+<td>Time</td>
+<td>Status</td>
+<td>Actions</td>
 
 </tr>
 
 <tr style="height:90px;">
-<td>Baby Shower</td>
-<td>12/5/2026</td>
-<td>7:00 PM</td>
-<td>Not Available</td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
 <td>
-<a href="EditAvailability.aspx" style="color:white; text-decoration:none;">Edit</a>
-&nbsp;&nbsp;
-<a href="#" style="color:white; text-decoration:none;">Delete</a>
-</td>
-</tr>
 
-<tr style="height:90px;">
-<td>Bridal Shower</td>
-<td>15/5/2026</td>
-<td>6:00 PM</td>
-<td>Available</td>
-<td>
-<a href="EditAvailability.aspx" style="color:white; text-decoration:none;">Edit</a>
-&nbsp;&nbsp;
-<a href="#" style="color:white; text-decoration:none;">Delete</a>
-</td>
-</tr>
-
-<tr style="height:90px;">
-<td>Graduation</td>
-<td>10/5/2026</td>
-<td>6:00 PM</td>
-<td>Available</td>
-<td>
-<a href="EditAvailability.aspx" style="color:white; text-decoration:none;">Edit</a>
-&nbsp;&nbsp;
-<a href="#" style="color:white; text-decoration:none;">Delete</a>
-</td>
-</tr>
-
-<tr style="height:90px;">
-<td>Graduation</td>
-<td>10/5/2026</td>
-<td>8:00 PM</td>
-<td>Not Available</td>
-<td>
-<a href="EditAvailability.aspx" style="color:white; text-decoration:none;">Edit</a>
-&nbsp;&nbsp;
-<a href="#" style="color:white; text-decoration:none;">Delete</a>
-</td>
-</tr>
-
-</table>
-
-<div style="
-width:880px;
-text-align:right;
-margin-top:0px;
-background-color:#d9d9d9;
-padding-top:12px;
-padding-bottom:12px;
-">
-
-    <a href="AddSlot.aspx"
+<a href="EditAvailability.aspx"
 style="
-background-color:#eeeeee;
-border:1px solid gray;
-padding:8px 16px;
+color:white;
 text-decoration:none;
-color:black;
-font-size:17px;
-font-family:Georgia;
-display:inline-flex;
-align-items:center;
-gap:4px;
-margin-right:12px;
+">
+Edit
+</a>
+
+&nbsp;&nbsp;
+
+<a href="#"
+style="
+color:white;
+text-decoration:none;
+">
+Delete
+</a>
+
+</td>
+
+</tr>
+
+<tr style="height:90px;">
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td>
+
+<a href="EditAvailability.aspx"
+style="
+color:white;
+text-decoration:none;
+">
+Edit
+</a>
+
+&nbsp;&nbsp;
+
+<a href="#"
+style="
+color:white;
+text-decoration:none;
+">
+Delete
+</a>
+
+</td>
+
+</tr>
+
+<tr style="height:90px;">
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td>
+
+<a href="EditAvailability.aspx"
+style="
+color:white;
+text-decoration:none;
+">
+Edit
+</a>
+
+&nbsp;&nbsp;
+
+<a href="#"
+style="
+color:white;
+text-decoration:none;
+">
+Delete
+</a>
+
+</td>
+
+</tr>
+
+<tr style="height:90px;">
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td>
+
+<a href="EditAvailability.aspx"
+style="
+color:white;
+text-decoration:none;
+">
+Edit
+</a>
+
+&nbsp;&nbsp;
+
+<a href="#"
+style="
+color:white;
+text-decoration:none;
+">
+Delete
+</a>
+
+</td>
+
+</tr>
+
+<tr style="background-color:white;">
+
+<td colspan="5"
+style="
+text-align:right;
+padding:10px;
 ">
 
-    <span>&nbsp;Add slot</span>
+<a href="AddSlot.aspx">
+
+<input type="button"
+value="⊕ Add slot"
+style="
+width:140px;
+height:38px;
+font-size:18px;
+font-family:Georgia;
+cursor:pointer;
+" />
 
 </a>
 
-</div>
+</td>
+
+</tr>
+
+</table>
 
 </div>
 
