@@ -13,7 +13,6 @@ background-color:#70677A;
 color:white;
 font-size:55px;
 padding:15px 25px;
-margin-bottom:0px;
 ">
 Manage Themes
 </div>
@@ -42,99 +41,36 @@ font-weight:bold;
 </tr>
 
 <tr style="height:90px;">
-
 <td></td>
-
 <td></td>
-
 <td></td>
-
 <td>
-
-<a href="#"
-style="
-color:white;
-text-decoration:none;
-">
-Edit
-</a>
-
+<a href="EditbshowerTheme.aspx" style="color:white;text-decoration:none;">Edit</a>
 &nbsp;&nbsp;
-
-<a href="#"
-style="
-color:white;
-text-decoration:none;
-">
-Delete
-</a>
-
+<a href="#" style="color:white;text-decoration:none;">Delete</a>
 </td>
-
 </tr>
 
 <tr style="height:90px;">
-
 <td></td>
-
 <td></td>
-
 <td></td>
-
 <td>
-
-<a href="#"
-style="
-color:white;
-text-decoration:none;
-">
-Edit
-</a>
-
+<a href="EditbrideTheme.aspx" style="color:white;text-decoration:none;">Edit</a>
 &nbsp;&nbsp;
-
-<a href="#"
-style="
-color:white;
-text-decoration:none;
-">
-Delete
-</a>
-
+<a href="#" style="color:white;text-decoration:none;">Delete</a>
 </td>
-
 </tr>
 
 <tr style="height:90px;">
-
 <td></td>
-
 <td></td>
-
 <td></td>
-
 <td>
-
-<a href="#"
-style="
-color:white;
-text-decoration:none;
-">
-Edit
-</a>
-
+<a href="EditgradThemes.aspx" style="color:white;text-decoration:none;">Edit</a>
 &nbsp;&nbsp;
-
-<a href="#"
-style="
-color:white;
-text-decoration:none;
-">
-Delete
-</a>
-
+<a href="#" style="color:white;text-decoration:none;">Delete</a>
 </td>
-
 </tr>
 
 <tr style="
