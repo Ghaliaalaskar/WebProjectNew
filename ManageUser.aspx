@@ -3,15 +3,6 @@ Language="C#"
 MasterPageFile="~/AdminMaster.Master"
 AutoEventWireup="true" %>
 
-<script runat="server">
-
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
-</script>
-
-
 <asp:Content ID="Content1"
 ContentPlaceHolderID="ContentPlaceHolder1"
 runat="server">
@@ -25,13 +16,12 @@ font-family:Georgia;
 
 <div style="
 width:851px;
- height:62px;
+height:62px;
 background-color:#70677A;
 color:white;
 font-size:42px;
 line-height:62px;
 padding-left:28px;
-margin-bottom:0px;
 ">
 
 Manage users
@@ -41,7 +31,6 @@ Manage users
 <table style="
 width:880px;
 border-collapse:collapse;
-margin-top:0px;
 background-color:#70677A;
 color:white;
 font-size:20px;
@@ -57,7 +46,7 @@ font-size:21px;
 ">
 
 <th>User ID</th>
-<th>name</th>
+<th>Name</th>
 <th>Email</th>
 <th>Phone</th>
 <th>Role</th>
@@ -65,80 +54,13 @@ font-size:21px;
 
 </tr>
 
-<tr style="height:90px;">
-<td>50014</td>
-<td>Lama</td>
-<td>lae@gmail.com</td>
-<td>966511033011</td>
-<td>Client</td>
-
-<td>
-<a href="EditUser.aspx"
-style="color:white; text-decoration:none;">Edit</a>
-
-&nbsp;&nbsp;
-
-<a href="#"
-style="color:white; text-decoration:none;">Delete</a>
-</td>
-
-</tr>
-
-<tr style="height:90px;">
-<td>11234</td>
-<td>Shaden</td>
-<td>snh@gmail.com</td>
-<td>966505181433</td>
-<td>Client</td>
-
-<td>
-<a href="EditUser.aspx"
-style="color:white; text-decoration:none;">Edit</a>
-
-&nbsp;&nbsp;
-
-<a href="#"
-style="color:white; text-decoration:none;">Delete</a>
-</td>
-
-</tr>
-
-<tr style="height:90px;">
-<td>90900</td>
-<td>Sara</td>
-<td>sl2@gmail.com</td>
-<td>966555263162</td>
-<td>Client</td>
-
-<td>
-<a href="EditUser.aspx"
-style="color:white; text-decoration:none;">Edit</a>
-
-&nbsp;&nbsp;
-
-<a href="#"
-style="color:white; text-decoration:none;">Delete</a>
-</td>
-
-</tr>
-
-<tr style="height:90px;">
-<td>33896</td>
-<td>Nawaf</td>
-<td>nnm@gmail.com</td>
-<td>966559322444</td>
-<td>Client</td>
-
-<td>
-<a href="EditUser.aspx"
-style="color:white; text-decoration:none;">Edit</a>
-
-&nbsp;&nbsp;
-
-<a href="#"
-style="color:white; text-decoration:none;">Delete</a>
-</td>
-
+<tr style="height:280px;">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 
 </table>
@@ -146,29 +68,24 @@ style="color:white; text-decoration:none;">Delete</a>
 <div style="
 width:880px;
 text-align:right;
-margin-top:0px;
 background-color:#70677A;
-padding-top:12px;
-padding-bottom:12px;
+padding-top:10px;
+padding-bottom:10px;
 ">
 
-    <a href="AddUser.aspx"
-
+<a href="AddUser.aspx"
 style="
 background-color:#eeeeee;
 border:1px solid gray;
-padding:8px 16px;
+padding:6px 18px;
 text-decoration:none;
 color:black;
 font-size:17px;
 font-family:Georgia;
-display:inline-flex;
-align-items:center;
-gap:4px;
-margin-right:12px;
+margin-right:18px;
 ">
 
-    <span>Add new user</span>
+Add new user
 
 </a>
 
