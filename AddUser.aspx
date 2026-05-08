@@ -88,7 +88,7 @@ font-family:Georgia;
 
 <div style="text-align:right;">
 
-<a href="ManageUser.aspx" style="
+<a href="ManageUsers.aspx" style="
 background-color:#eeeeee;
 border:1px solid gray;
 padding:8px 16px;
@@ -101,7 +101,7 @@ margin-right:60px;
 × Cancel
 </a>
 
-<a href="ManageUser.aspx" style="
+<a href="ManageUsers.aspx" style="
 background-color:#eeeeee;
 border:1px solid gray;
 padding:8px 18px;
