@@ -98,6 +98,7 @@
     <Content Include="images\grad.jpg" />
     <Content Include="login.aspx" />
     <Content Include="ManageAvailability.aspx" />
+    <Content Include="ManageBooking.aspx" />
     <Content Include="ManageThemes.aspx" />
     <Content Include="ManageUser.aspx" />
     <Content Include="myaccount.aspx" />
@@ -275,6 +276,13 @@
     </Compile>
     <Compile Include="ManageAvailability.aspx.designer.cs">
       <DependentUpon>ManageAvailability.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageBooking.aspx.cs">
+      <DependentUpon>ManageBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageBooking.aspx.designer.cs">
+      <DependentUpon>ManageBooking.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageThemes.aspx.cs">
       <DependentUpon>ManageThemes.aspx</DependentUpon>
