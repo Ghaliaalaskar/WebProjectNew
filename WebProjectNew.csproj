@@ -86,6 +86,7 @@
     <Content Include="changepassword.aspx" />
     <Content Include="DiscoverThemes.aspx" />
     <Content Include="EditAvailability.aspx" />
+    <Content Include="EditBooking.aspx" />
     <Content Include="EditbrideTheme.aspx" />
     <Content Include="EditbshowerTheme.aspx" />
     <Content Include="EditgradThemes.aspx" />
@@ -220,6 +221,13 @@
     </Compile>
     <Compile Include="EditAvailability.aspx.designer.cs">
       <DependentUpon>EditAvailability.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditBooking.aspx.cs">
+      <DependentUpon>EditBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditBooking.aspx.designer.cs">
+      <DependentUpon>EditBooking.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditbrideTheme.aspx.cs">
       <DependentUpon>EditbrideTheme.aspx</DependentUpon>
