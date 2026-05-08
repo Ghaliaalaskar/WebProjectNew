@@ -1,53 +1,43 @@
-﻿<%@ Page Title="Manage Themes"
-Language="C#"
-MasterPageFile="~/AdminMaster.Master"
-AutoEventWireup="true" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.Master" AutoEventWireup="true" CodeBehind="ManageThemes.aspx.cs" Inherits="WebProjectNew.ManageThemes" %>
 
-<asp:Content ID="Content1"
-ContentPlaceHolderID="ContentPlaceHolder1"
-runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 <div style="
-width:980px;
-margin-left:15px;
-margin-top:35px;
+width:100%;
+padding:20px;
 font-family:Georgia;
 ">
 
 <div style="
-width:850px;
-height:62px;
 background-color:#70677A;
 color:white;
-font-size:42px;
-line-height:62px;
-padding-left:28px;
+font-size:55px;
+padding:15px 25px;
+margin-bottom:0px;
 ">
-
 Manage Themes
-
 </div>
 
 <table style="
-width:850px;
+width:100%;
 border-collapse:collapse;
+text-align:center;
 background-color:#70677A;
 color:white;
-font-size:18px;
-text-align:center;
+font-size:28px;
 ">
 
 <tr style="
-background-color:#e5dfeb;
+background-color:#ece8f1;
 color:black;
-height:55px;
+height:70px;
 font-weight:bold;
 ">
 
-<td>Themes Name</td>
-<td>Duration</td>
-<td>Price</td>
-<td>Actions</td>
+<th>Themes Name</th>
+<th>Duration</th>
+<th>Price</th>
+<th>Actions</th>
 
 </tr>
 
@@ -61,7 +51,7 @@ font-weight:bold;
 
 <td>
 
-<a href="EditbabyThemes.aspx"
+<a href="#"
 style="
 color:white;
 text-decoration:none;
@@ -93,7 +83,7 @@ Delete
 
 <td>
 
-<a href="EditbridelThemes.aspx"
+<a href="#"
 style="
 color:white;
 text-decoration:none;
@@ -125,7 +115,7 @@ Delete
 
 <td>
 
-<a href="EditgradThemes.aspx"
+<a href="#"
 style="
 color:white;
 text-decoration:none;
@@ -147,26 +137,26 @@ Delete
 
 </tr>
 
-<tr style="background-color:white;">
+<tr style="
+height:70px;
+background:white;
+">
 
-<td colspan="4"
-style="
+<td colspan="4" style="
 text-align:right;
-padding:10px;
+padding-right:15px;
 ">
 
-<a href="AddThemes.aspx">
-
-<input type="button"
-value="Add Themes"
+<a href="AddThemes.aspx"
 style="
-width:120px;
-height:35px;
-font-size:16px;
-font-family:Georgia;
-cursor:pointer;
-" />
-
+background:white;
+border:1px solid gray;
+padding:8px 18px;
+text-decoration:none;
+color:black;
+font-size:18px;
+">
+Add Themes
 </a>
 
 </td>
