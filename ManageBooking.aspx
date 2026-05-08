@@ -15,14 +15,13 @@ font-family:Georgia;
 ">
 
 <div style="
-width:851px;
+width:850px;
 height:62px;
 background-color:#70677A;
 color:white;
 font-size:42px;
 line-height:62px;
 padding-left:28px;
-margin-bottom:0px;
 ">
 
 Manage Booking
@@ -30,102 +29,152 @@ Manage Booking
 </div>
 
 <table style="
-width:880px;
+width:850px;
 border-collapse:collapse;
-margin-top:0px;
 background-color:#70677A;
 color:white;
-font-size:20px;
+font-size:18px;
 text-align:center;
-font-family:Georgia;
 ">
 
 <tr style="
-background-color:#d5cedc;
+background-color:#e5dfeb;
 color:black;
-height:68px;
-font-size:21px;
+height:55px;
+font-weight:bold;
 ">
 
-<th>Client Name</th>
-<th>Theme Date</th>
-<th>Time</th>
-<th>Status</th>
-<th>Actions</th>
+<td>Client Name</td>
+<td>Theme Date</td>
+<td>Time</td>
+<td>Status</td>
+<td>Actions</td>
 
 </tr>
 
 <tr style="height:90px;">
-<td>Lama</td>
-<td>Baby Shower 12/5/2026</td>
-<td>7:00 PM</td>
-<td>Pending</td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
 <td>
-<a href="#" style="color:white; text-decoration:none;">Delete</a>
-</td>
-</tr>
 
-<tr style="height:90px;">
-<td>Shaden</td>
-<td>Graduation 10/5/2026</td>
-<td>6:00 PM</td>
-<td>Confirmed</td>
-<td>
-<a href="#" style="color:white; text-decoration:none;">Delete</a>
-</td>
-</tr>
-
-<tr style="height:90px;">
-<td>Sara</td>
-<td>Bridal Shower 15/5/2026</td>
-<td>6:00 PM</td>
-<td>Cancelled</td>
-<td>
-<a href="#" style="color:white; text-decoration:none;">Delete</a>
-</td>
-</tr>
-
-<tr style="height:90px;">
-<td>Nawaf</td>
-<td>Graduation 10/5/2026</td>
-<td>8:00 PM</td>
-<td>Confirmed</td>
-<td>
-<a href="#" style="color:white; text-decoration:none;">Delete</a>
-</td>
-</tr>
-
-</table>
-
-    <div style="
-width:880px;
-text-align:right;
-margin-top:0px;
-background-color:#d9d9d9;
-padding-top:12px;
-padding-bottom:12px;
-">
-
-        <a href="EditBooking.aspx"
+<a href="#"
 style="
-background-color:#eeeeee;
-border:1px solid gray;
-padding:8px 35px;
+color:white;
 text-decoration:none;
-color:black;
-font-size:20px;
-font-family:Georgia;
-display:inline-flex;
-align-items:center;
-gap:8px;
-margin-right:22px;
+">
+Delete
+</a>
+
+</td>
+
+</tr>
+
+<tr style="height:90px;">
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td>
+
+<a href="#"
+style="
+color:white;
+text-decoration:none;
+">
+Delete
+</a>
+
+</td>
+
+</tr>
+
+<tr style="height:90px;">
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td>
+
+<a href="#"
+style="
+color:white;
+text-decoration:none;
+">
+Delete
+</a>
+
+</td>
+
+</tr>
+
+<tr style="height:90px;">
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td>
+
+<a href="#"
+style="
+color:white;
+text-decoration:none;
+">
+Delete
+</a>
+
+</td>
+
+</tr>
+
+<tr style="background-color:white;">
+
+<td colspan="5"
+style="
+text-align:right;
+padding:10px;
 ">
 
-        <span>Edit</span>
+<a href="EditBooking.aspx">
+
+<input type="button"
+value="Edit"
+style="
+width:110px;
+height:35px;
+font-size:16px;
+font-family:Georgia;
+cursor:pointer;
+" />
 
 </a>
 
-</div>
+</td>
+
+</tr>
+
+</table>
 
 </div>
 
