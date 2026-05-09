@@ -11,6 +11,7 @@
         .auto-style6 {
             font-weight: normal;
         }
+        .table-style {}
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -33,7 +34,18 @@
         </tr>
         <tr>
             <td>
-                <asp:GridView ID="GridView1" runat="server" Width="583px">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="table-style" BackColor="#CCCCCC" OnSelectedIndexChanged="GridViewHistory_SelectedIndexChanged" Width="600px">
+                <Columns>
+                 <asp:BoundField DataField="ServiceName" HeaderText="Service Name" />
+                 <asp:BoundField DataField="AppointmentDate" HeaderText="Date" DataFormatString="{0:yyyy-MM-dd}" />
+                  <asp:BoundField DataField="AppointmentTime" HeaderText="Time" />
+                 </Columns>
+                <EmptyDataTemplate>
+        <div style="text-align:center; padding:20px;">
+            No booking history found.
+        </div>
+    </EmptyDataTemplate>
+                    <HeaderStyle BackColor="#87779A" />
                 </asp:GridView>
             </td>
             <td>&nbsp;</td>

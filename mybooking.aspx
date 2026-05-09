@@ -26,12 +26,33 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style6" style="text-align: right">&nbsp;</td>
+            <td class="auto-style6" style="text-align: right">
+               <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+                    DataKeyNames="AppointmentID" OnRowDeleting="GridView1_RowDeleting" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" Width="575px" BackColor="#CCCCCC">
+                    <Columns>
+                    <asp:BoundField DataField="ServiceName" HeaderText="Service Name" />
+                    <asp:BoundField DataField="AppointmentDate" HeaderText="Date" DataFormatString="{0:yyyy-MM-dd}" />
+                     <asp:BoundField DataField="AppointmentTime" HeaderText="Time" />
+        
+                    <asp:TemplateField HeaderText="Actions">
+                     <ItemTemplate>
+                         <asp:Button ID="btnCancel" runat="server" 
+                             CommandName="Delete" 
+                             Text="Cancel Booking" 
+                             CssClass="btn-danger"
+                             CausesValidation="false"
+                             OnClientClick="return confirm('Are you sure you want to cancel this booking?');" />
+                     </ItemTemplate>
+                   </asp:TemplateField>
+                      </Columns>
+                    <EditRowStyle BackColor="#CCCCCC" />
+                    <HeaderStyle BackColor="#87779A" />
+               </asp:GridView>
+            </td>
         </tr>
         <tr>
-            <td>
-                <asp:GridView ID="GridView1" runat="server" style="text-align: center" Width="728px">
-                </asp:GridView>
+            <td style="text-align: center">
+                <asp:Label ID="Label1" runat="server" ForeColor="#339933" style="text-align: center"></asp:Label>
             </td>
         </tr>
     </table>

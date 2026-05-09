@@ -82,7 +82,7 @@
         </tr>
         <tr>
             <td class="auto-style6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Button2" runat="server" BorderStyle="None" ForeColor="#87779A" Text="Cancel" Width="100px" OnClick="Button2_Click" />
+                <asp:Button ID="Button2" runat="server" BorderStyle="None" ForeColor="#87779A" Text="Back" Width="100px" OnClick="Button2_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="Button3" runat="server" BackColor="#87779A" BorderStyle="None" ForeColor="White" Text="Change" Width="100px" OnClick="Button3_Click" />
                 <br />

@@ -51,7 +51,7 @@
                 <h2>Login</h2>
                 <asp:TextBox ID="txtEmail" runat="server" CssClass="input-field" placeholder="Email"></asp:TextBox>
                 <asp:TextBox ID="txtPass" runat="server" CssClass="input-field" TextMode="Password" placeholder="password"></asp:TextBox>
-                <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn-submit" PostBackUrl="~/PickTheme.aspx"/>
+                <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn-submit" PostBackUrl="~/PickTheme.aspx" OnClick="btnLogin_Click"/>
                 <div class="footer-text">
                     Don't have an account? <a href="register.aspx">Register</a>
                 </div>
