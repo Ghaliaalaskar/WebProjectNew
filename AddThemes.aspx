@@ -1,155 +1,264 @@
-﻿<%@ Page Title="Add Themes"
-Language="C#"
-MasterPageFile="~/AdminMaster.Master"
-AutoEventWireup="true" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.Master"
+AutoEventWireup="true"
+CodeBehind="AddThemes.aspx.cs"
+Inherits="WebProjectNew.AddThemes" %>
 
-<asp:Content ID="Content1"
-ContentPlaceHolderID="ContentPlaceHolder1"
-runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div style="
-width:980px;
-margin-left:15px;
-margin-top:35px;
-font-family:Georgia;
-">
+<div style="width:900px;margin:auto;">
 
-<div style="
-width:851px;
-height:62px;
-background-color:#70677A;
+<h1 style="
+background:#5b566e;
 color:white;
-font-size:42px;
-line-height:62px;
-padding-left:28px;
-margin-bottom:25px;
-">
-
+padding:15px;
+font-family:Georgia;
+font-size:45px;">
 Add Themes
-
-</div>
+</h1>
 
 <div style="
-width:620px;
-margin-left:70px;
-background-color:#70677A;
+width:650px;
+margin:auto;
+background:#5b566e;
+padding:40px;">
+
+<h2 style="
 color:white;
-font-size:20px;
-">
+font-family:Georgia;">
+Add New Theme:
+</h2>
 
-<div style="
-height:62px;
-background-color:#d5cedc;
+<table style="width:100%;">
+
+<tr>
+<td style="
+color:white;
+font-size:30px;
+font-family:Georgia;
+width:200px;">
+Name:
+</td>
+
+<td>
+
+<asp:TextBox
+ID="txtName"
+runat="server"
+Width="330px"
+Height="35px"
+Font-Size="16px">
+</asp:TextBox>
+
+<br />
+
+<asp:RequiredFieldValidator
+ID="rfvName"
+runat="server"
+ControlToValidate="txtName"
+ErrorMessage="Required"
+ForeColor="Red"
+Font-Size="18px">
+</asp:RequiredFieldValidator>
+
+</td>
+</tr>
+
+<tr>
+<td style="
+color:white;
+font-size:30px;
+font-family:Georgia;">
+Description:
+</td>
+
+<td>
+
+<asp:TextBox
+ID="txtDescription"
+runat="server"
+TextMode="MultiLine"
+Width="330px"
+Height="90px"
+Font-Size="16px">
+</asp:TextBox>
+
+<br />
+
+<asp:RequiredFieldValidator
+ID="rfvDescription"
+runat="server"
+ControlToValidate="txtDescription"
+ErrorMessage="Required"
+ForeColor="Red"
+Font-Size="18px">
+</asp:RequiredFieldValidator>
+
+</td>
+</tr>
+
+<tr>
+<td style="
+color:white;
+font-size:30px;
+font-family:Georgia;">
+Duration:
+</td>
+
+<td>
+
+<asp:TextBox
+ID="txtDuration"
+runat="server"
+Width="330px"
+Height="35px"
+Font-Size="16px">
+</asp:TextBox>
+
+<br />
+
+<asp:RequiredFieldValidator
+ID="rfvDuration"
+runat="server"
+ControlToValidate="txtDuration"
+ErrorMessage="Required"
+ForeColor="Red"
+Font-Size="18px">
+</asp:RequiredFieldValidator>
+
+<asp:RegularExpressionValidator
+ID="revDuration"
+runat="server"
+ControlToValidate="txtDuration"
+ValidationExpression="^\d+$"
+ErrorMessage="Numbers Only"
+ForeColor="Yellow"
+Font-Size="18px">
+</asp:RegularExpressionValidator>
+
+</td>
+</tr>
+
+<tr>
+<td style="
+color:white;
+font-size:30px;
+font-family:Georgia;">
+Price:
+</td>
+
+<td>
+
+<asp:TextBox
+ID="txtPrice"
+runat="server"
+Width="330px"
+Height="35px"
+Font-Size="16px">
+</asp:TextBox>
+
+<br />
+
+<asp:RequiredFieldValidator
+ID="rfvPrice"
+runat="server"
+ControlToValidate="txtPrice"
+ErrorMessage="Required"
+ForeColor="Red"
+Font-Size="18px">
+</asp:RequiredFieldValidator>
+
+<asp:RegularExpressionValidator
+ID="revPrice"
+runat="server"
+ControlToValidate="txtPrice"
+ValidationExpression="^\d+$"
+ErrorMessage="Numbers Only"
+ForeColor="Yellow"
+Font-Size="18px">
+</asp:RegularExpressionValidator>
+
+</td>
+</tr>
+
+<tr>
+<td style="
+color:white;
+font-size:30px;
+font-family:Georgia;">
+Photo:
+</td>
+
+<td>
+
+<asp:FileUpload
+ID="FileUpload1"
+runat="server"
+Width="330px" />
+
+<br />
+
+<asp:RequiredFieldValidator
+ID="rfvPhoto"
+runat="server"
+ControlToValidate="FileUpload1"
+ErrorMessage="Required"
+ForeColor="Red"
+Font-Size="18px">
+</asp:RequiredFieldValidator>
+
+</td>
+</tr>
+
+</table>
+
+<br /><br />
+
+<div style="text-align:center;">
+
+<a href="ManageThemes.aspx"
+style="
+display:inline-block;
+width:100px;
+height:40px;
+line-height:40px;
+background:#eeeeee;
 color:black;
-font-size:26px;
-line-height:62px;
-padding-left:20px;
-">
-
-Add Themes:
-
-</div>
-
-<div style="
-padding-top:35px;
-padding-left:45px;
-padding-right:45px;
-padding-bottom:30px;
-">
-
-<div style="margin-bottom:22px;">
-<label style="
-display:inline-block;
-width:120px;
-">Name:</label>
-
-<input type="text" style="
-width:370px;
-height:32px;
-font-size:18px;
-font-family:Georgia;
-" />
-
-</div>
-
-<div style="margin-bottom:22px;">
-<label style="
-display:inline-block;
-width:120px;
-">Duration:</label>
-
-<input type="text" style="
-width:370px;
-height:32px;
-font-size:18px;
-font-family:Georgia;
-" />
-
-</div>
-
-<div style="margin-bottom:22px;">
-<label style="
-display:inline-block;
-width:120px;
-">Description:</label>
-
-<input type="text" style="
-width:370px;
-height:32px;
-font-size:18px;
-font-family:Georgia;
-" />
-
-</div>
-
-<div style="margin-bottom:28px;">
-<label style="
-display:inline-block;
-width:120px;
-">Price:</label>
-
-<input type="text" style="
-width:370px;
-height:32px;
-font-size:18px;
-font-family:Georgia;
-" />
-
-</div>
-
-<div style="
-display:flex;
-align-items:center;
-margin-top:10px;
-">
-
-<a href="#" style="
-color:white;
 text-decoration:none;
+border:1px solid gray;
+font-family:Georgia;
 font-size:17px;
-margin-right:140px;
-">
-☁ Add photo
+text-align:center;">
+Cancel
 </a>
 
-<a href="ManageThemes.aspx" style="
-color:#9b1c1c;
-text-decoration:none;
-font-size:22px;
-margin-right:55px;
-">
-CANCEL
-</a>
+&nbsp;&nbsp;&nbsp;
 
-<a href="ManageThemes.aspx" style="
-color:green;
-text-decoration:none;
-font-size:22px;
-">
-DONE
-</a>
+<asp:Button
+ID="btnSave"
+runat="server"
+Text="Add"
+Width="100px"
+Height="40px"
+BackColor="#eeeeee"
+ForeColor="Black"
+BorderColor="Gray"
+Font-Names="Georgia"
+Font-Size="17px"
+OnClick="btnAdd_Click" />
 
 </div>
+
+<br />
+
+<div style="text-align:center;">
+
+&nbsp;<asp:Label
+ID="lblMessage"
+runat="server"
+ForeColor="LimeGreen"
+Font-Size="20px"
+Font-Bold="true">
+</asp:Label>
 
 </div>
 
