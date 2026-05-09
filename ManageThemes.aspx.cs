@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace WebProjectNew
 {
@@ -12,6 +7,23 @@ namespace WebProjectNew
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnAddTheme_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                lblMessage.Text = "Theme added successfully";
+            }
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            txtThemeName.Text = "";
+            txtDuration.Text = "";
+            txtPrice.Text = "";
+
+            lblMessage.Text = "Theme deleted successfully";
         }
     }
 }
