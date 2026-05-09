@@ -1,174 +1,153 @@
-﻿<%@ Page Title="Edit Availability"
-Language="C#"
-MasterPageFile="~/AdminMaster.Master"
-AutoEventWireup="true" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.Master"
+AutoEventWireup="true"
+CodeBehind="EditAvailability.aspx.cs"
+Inherits="WebProjectNew.EditAvailability" %>
 
-<asp:Content ID="Content1"
-ContentPlaceHolderID="ContentPlaceHolder1"
-runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
 
-<div style="
-width:980px;
-margin-left:15px;
-margin-top:35px;
-font-family:Georgia;
-">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div style="
-width:851px;
-height:62px;
-background-color:#70677A;
-color:white;
-font-size:42px;
-line-height:62px;
-padding-left:28px;
-margin-bottom:25px;
-">
+<div style="width:1000px;margin:auto;background:white;padding:20px;">
 
-Edit Availability
+    <div style="background:#5e5a6e;color:white;font-size:38px;font-family:Georgia;padding:15px;">
+        Edit Availability
+    </div>
 
-</div>
+    <br />
 
-<div style="
-width:620px;
-margin-left:70px;
-background-color:#70677A;
-color:white;
-font-size:20px;
-">
+    <div style="width:650px;margin:auto;border:1px solid #cccccc;font-family:Georgia;">
 
-<div style="
-height:62px;
-background-color:#d5cedc;
-color:black;
-font-size:26px;
-line-height:62px;
-padding-left:20px;
-">
+        <div style="background:#eeeeee;padding:18px;font-size:22px;">
+            Edit Availability
+        </div>
 
-Edit Availability
+        <div style="background:#5e5a6e;padding:35px;color:white;">
 
-</div>
+            <div style="margin-bottom:22px;">
+                <label style="display:inline-block;width:120px;">Theme:</label>
 
-<div style="
-padding-top:38px;
-padding-left:35px;
-padding-right:35px;
-padding-bottom:32px;
-">
+                <asp:DropDownList ID="ddlTheme" runat="server"
+                    Width="380px"
+                    Height="34px"
+                    Font-Size="16px"
+                    Font-Names="Georgia">
+                    <asp:ListItem Text="Select Theme:" Value=""></asp:ListItem>
+                    <asp:ListItem>Baby Shower</asp:ListItem>
+                    <asp:ListItem>Bridal Shower</asp:ListItem>
+                    <asp:ListItem>Graduation</asp:ListItem>
+                </asp:DropDownList>
 
-<div style="margin-bottom:22px;">
-<label style="display:inline-block; width:120px;">Theme:</label>
+                <br />
 
-<select style="
-width:380px;
-height:34px;
-font-size:16px;
-font-family:Georgia;
-background-color:white;
-border:1px solid gray;
-">
+                <asp:RequiredFieldValidator ID="rfvTheme" runat="server"
+                    ControlToValidate="ddlTheme"
+                    InitialValue=""
+                    ErrorMessage="Required"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
+            </div>
 
-<option>Select Theme:</option>
-<option>Baby Shower</option>
-<option>Bridal Shower</option>
-<option>Graduation</option>
+            <div style="margin-bottom:22px;">
+                <label style="display:inline-block;width:120px;">Date:</label>
 
-</select>
-</div>
+                <asp:TextBox ID="txtDate" runat="server"
+                    TextMode="Date"
+                    Width="375px"
+                    Height="30px"
+                    Font-Size="16px"
+                    Font-Names="Georgia">
+                </asp:TextBox>
 
-<div style="margin-bottom:22px;">
-<label style="display:inline-block; width:120px;">Date:</label>
+                <br />
 
-<input type="text"
-style="
-width:370px;
-height:30px;
-font-size:16px;
-font-family:Georgia;
-background-color:white;
-border:1px solid gray;
-padding-left:8px;
-" />
-</div>
+                <asp:RequiredFieldValidator ID="rfvDate" runat="server"
+                    ControlToValidate="txtDate"
+                    ErrorMessage="Required"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
+            </div>
 
-<div style="margin-bottom:22px;">
-<label style="display:inline-block; width:120px;">Time:</label>
+            <div style="margin-bottom:22px;">
+                <label style="display:inline-block;width:120px;">Time:</label>
 
-<select style="
-width:380px;
-height:34px;
-font-size:16px;
-font-family:Georgia;
-background-color:white;
-border:1px solid gray;
-">
+                <asp:DropDownList ID="ddlTime" runat="server"
+                    Width="380px"
+                    Height="34px"
+                    Font-Size="16px"
+                    Font-Names="Georgia">
+                    <asp:ListItem Text="Select Time:" Value=""></asp:ListItem>
+                    <asp:ListItem>4:00 PM</asp:ListItem>
+                    <asp:ListItem>5:00 PM</asp:ListItem>
+                    <asp:ListItem>6:00 PM</asp:ListItem>
+                    <asp:ListItem>7:00 PM</asp:ListItem>
+                </asp:DropDownList>
 
-<option>Select Time:</option>
-<option>6:00 PM</option>
-<option>7:00 PM</option>
-<option>8:00 PM</option>
+                <br />
 
-</select>
-</div>
+                <asp:RequiredFieldValidator ID="rfvTime" runat="server"
+                    ControlToValidate="ddlTime"
+                    InitialValue=""
+                    ErrorMessage="Required"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
+            </div>
 
-<div style="margin-bottom:32px;">
-<label style="display:inline-block; width:120px;">Status:</label>
+            <div style="margin-bottom:22px;">
+                <label style="display:inline-block;width:120px;">Status:</label>
 
-<select style="
-width:380px;
-height:34px;
-font-size:16px;
-font-family:Georgia;
-background-color:white;
-border:1px solid gray;
-">
+                <asp:DropDownList ID="ddlStatus" runat="server"
+                    Width="380px"
+                    Height="34px"
+                    Font-Size="16px"
+                    Font-Names="Georgia">
+                    <asp:ListItem Text="Select Status:" Value=""></asp:ListItem>
+                    <asp:ListItem>Available</asp:ListItem>
+                    <asp:ListItem>Booked</asp:ListItem>
+                </asp:DropDownList>
 
-<option>Select Status:</option>
-<option>Available</option>
-<option>Not Available</option>
+                <br />
 
-</select>
-</div>
+                <asp:RequiredFieldValidator ID="rfvStatus" runat="server"
+                    ControlToValidate="ddlStatus"
+                    InitialValue=""
+                    ErrorMessage="Required"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
+            </div>
 
-<div style="text-align:right;">
+            <div style="text-align:right;">
 
-<a href="ManageAvailability.aspx"
-style="
-background-color:#eeeeee;
-border:1px solid gray;
-padding:8px 16px;
-text-decoration:none;
-color:black;
-font-size:17px;
-font-family:Georgia;
-margin-right:55px;
-">
+                <asp:Button ID="btnCancel" runat="server"
+                    Text="Cancel"
+                    Width="100px"
+                    Height="40px"
+                    CausesValidation="false"
+                    PostBackUrl="~/ManageAvailability.aspx" />
 
-× Cancel
+                &nbsp;&nbsp;
 
-</a>
+                <asp:Button ID="btnSave" runat="server"
+                    Text="Save"
+                    Width="100px"
+                    Height="40px"
+                    OnClick="btnSave_Click" />
 
-<a href="ManageAvailability.aspx"
-style="
-background-color:#eeeeee;
-border:1px solid gray;
-padding:8px 18px;
-text-decoration:none;
-color:black;
-font-size:17px;
-font-family:Georgia;
-">
+            </div>
 
-▣ save
+            <br />
 
-</a>
+            <div style="text-align:center;">
+                <asp:Label ID="lblMessage" runat="server"
+                    ForeColor="LimeGreen"
+                    Font-Size="20px"
+                    Font-Bold="true">
+                </asp:Label>
+            </div>
 
-</div>
+        </div>
 
-</div>
-
-</div>
+    </div>
 
 </div>
 
