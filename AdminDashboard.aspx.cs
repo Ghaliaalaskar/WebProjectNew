@@ -12,8 +12,18 @@ namespace WebProjectNew
 {
     public partial class AdminDashboard : System.Web.UI.Page
     {
+        string connStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True";
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            if (Session["UserID"] == null|| Session["Role"].ToString().ToLower() != "1")
+
+            {
+                Response.Redirect("login.aspx");
+                return;
+            }
+
             if (!IsPostBack)
             {
                 LoadDashboardStats();
@@ -24,10 +34,10 @@ namespace WebProjectNew
         {
             try
             {
-                lblTotalUsers.Text = "4";
-                lblTotalBookings.Text = "2";
-                lblAvailableSlots.Text = "2";
-                lblTotalThemes.Text = "3";
+                lblTotalUsers.Text = GetCountFromDb("[User]").ToString();
+                lblTotalBookings.Text = GetCountFromDb("Appointments").ToString();
+                lblAvailableSlots.Text = GetCountFromDb("Availability").ToString();
+                lblTotalThemes.Text = GetCountFromDb("Services").ToString();
             }
             catch (Exception ex)
             {
@@ -37,13 +47,16 @@ namespace WebProjectNew
 
         private int GetCountFromDb(string tableName)
         {
-            string connStr = ConfigurationManager.ConnectionStrings["HealthyHubConnectionString"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connStr))
             {
                 string query = "SELECT COUNT(*) FROM " + tableName;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 conn.Open();
-                return (int)cmd.ExecuteScalar();
+
+                object result = cmd.ExecuteScalar();
+                conn.Close();
+
+                return result != null ? Convert.ToInt32(result) : 0;
             }
         }
     }

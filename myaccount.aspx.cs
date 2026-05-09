@@ -39,8 +39,8 @@ namespace WebProjectNew
                 if (dr.Read())
                 {
                     TextBox1.Text = dr["Name"].ToString();
-                    TextBox2.Text = dr["Email"].ToString();
-                    TextBox3.Text = dr["Phone"].ToString();
+                    TextBox3.Text = dr["Email"].ToString();
+                    TextBox4.Text = dr["Phone"].ToString();
                 }
                 con.Close();
             }
@@ -56,8 +56,8 @@ namespace WebProjectNew
                     SqlCommand cmd = new SqlCommand(query, con);
 
                     cmd.Parameters.AddWithValue("@Name", TextBox1.Text);
-                    cmd.Parameters.AddWithValue("@Email", TextBox2.Text);
-                    cmd.Parameters.AddWithValue("@Phone", TextBox3.Text);
+                    cmd.Parameters.AddWithValue("@Email", TextBox3.Text);
+                    cmd.Parameters.AddWithValue("@Phone", TextBox4.Text);
                     cmd.Parameters.AddWithValue("@ID", Session["UserID"]);
 
                     con.Open();

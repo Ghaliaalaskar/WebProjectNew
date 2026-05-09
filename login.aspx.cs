@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient; 
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -20,27 +20,39 @@ namespace WebProjectNew
         {
             using (SqlConnection con = new SqlConnection(connStr))
             {
-               
-                string query = "SELECT UserID FROM [User] WHERE Email = @Email AND Password = @Pass";
+                string query = "SELECT UserID, Role FROM [User] WHERE Email = @Email AND Password = @Pass";
 
                 SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@Email", txtEmail.Text); 
-                cmd.Parameters.AddWithValue("@Pass", txtPass.Text);  
+                cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
+                cmd.Parameters.AddWithValue("@Pass", txtPass.Text.Trim());
 
                 con.Open();
-                object userId = cmd.ExecuteScalar(); 
-                con.Close();
+                
+                SqlDataReader dr = cmd.ExecuteReader();
 
-                if (userId != null)
+                if (dr.Read()) 
                 {
-                    Session["UserID"] = userId.ToString();
+                    Session["UserID"] = dr["UserID"].ToString();
+                    string userRole = dr["Role"].ToString();
+                    Session["Role"] = userRole;
 
-                    Response.Redirect("PickTheme.aspx");
+                    con.Close();
+
+                    
+                    if (userRole == "1") 
+                    {
+                        Response.Redirect("AdminDashboard.aspx");
+                    }
+                    else if (userRole == "2") 
+                    {
+                        Response.Redirect("PickTheme.aspx");
+                    }
+                    
                 }
                 else
                 {
+                    con.Close();
                     Label1.Text = "Invalid Email or Password!";
-                    
                 }
             }
         }

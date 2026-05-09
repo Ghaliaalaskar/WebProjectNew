@@ -47,15 +47,15 @@
             <asp:Repeater ID="rptUserThemes" runat="server">
                 <ItemTemplate>
                     <div class="theme-card">
-                        <img src='<%# "images/" + Eval("theme_image") %>' alt='<%# Eval("theme_name") %>' />
+                        <img src='<%# "images/" + Eval("ServicePhoto") %>' alt='<%# Eval("ServiceName") %>' />
                         <div class="theme-info">
-                            <span class="theme-label"><%# Eval("theme_name") %></span>
+                            <span class="theme-label"><%# Eval("ServiceName") %></span>
                             
                             <asp:HyperLink ID="lnkDetails" runat="server" CssClass="btn-details" 
                                 NavigateUrl='<%# Eval("details_page_url") %>'>Theme Details</asp:HyperLink>
                             
                             <asp:Button ID="btnBook" runat="server" Text="Book Theme" CssClass="btn-book" 
-                                OnClick="GoToBooking" CommandArgument='<%# Eval("theme_name") %>' />
+                                OnClick="GoToBooking" CommandArgument='<%# Eval("ServiceName") %>' />
                         </div>
                     </div>
                 </ItemTemplate>

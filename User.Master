@@ -27,7 +27,7 @@
                     <asp:Image ID="Image1" runat="server" Height="105px" ImageUrl="~/images/admin-icon.png" style="margin-top: 22px" Width="114px" />
                     <br />
                     <br />
-                    <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="White">My Dashboard</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="White" Font-Underline="False" NavigateUrl="~/userhome.aspx" style="font-weight: 700">My Dashboard</asp:HyperLink>
                     <br />
                     <br />
 &nbsp;<br />
@@ -45,7 +45,7 @@
 &nbsp;<br />
                     <br />
                     <br />
-                    <asp:HyperLink ID="HyperLink5" runat="server" Font-Bold="False" ForeColor="White">Home</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink5" runat="server" Font-Bold="False" ForeColor="White" Font-Underline="False" NavigateUrl="~/welcomepage.aspx" style="font-weight: 700">Home</asp:HyperLink>
                     <br />
                     <br />
                     <br />

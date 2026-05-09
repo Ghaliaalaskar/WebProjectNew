@@ -74,7 +74,7 @@
                     <i class="fas fa-magic"></i> Pick Themes
                 </asp:HyperLink>
                 
-                <asp:HyperLink ID="lnkDash" runat="server" NavigateUrl="UserDashboard.aspx">
+                <asp:HyperLink ID="lnkDash" runat="server" NavigateUrl="~/userhome.aspx">
                     <i class="fas fa-chart-line"></i> My Dashboard
                 </asp:HyperLink>
                 
