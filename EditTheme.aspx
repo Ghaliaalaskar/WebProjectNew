@@ -89,7 +89,7 @@ margin-right:20px;
 text-align:center;
 vertical-align:middle;
 ">
-Cancel
+&nbsp;Cancel
 </a>
 
 <asp:Button
