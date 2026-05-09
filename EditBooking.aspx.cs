@@ -17,13 +17,14 @@ namespace WebProjectNew
 
             SqlConnection con = new SqlConnection(cs);
 
-            string query = "UPDATE Appointments SET AppointmentDate=@AppointmentDate, AppointmentTime=@AppointmentTime WHERE UserID=@UserID";
+            string query = "UPDATE Bookings SET ClientName=@ClientName, Theme=@Theme, BookingDate=@BookingDate, BookingTime=@BookingTime WHERE BookingID=1";
 
             SqlCommand cmd = new SqlCommand(query, con);
 
-            cmd.Parameters.AddWithValue("@AppointmentDate", txtDate.Text);
-            cmd.Parameters.AddWithValue("@AppointmentTime", ddlTime.Text);
-            cmd.Parameters.AddWithValue("@UserID", txtClientName.Text);
+            cmd.Parameters.AddWithValue("@ClientName", txtClientName.Text);
+            cmd.Parameters.AddWithValue("@Theme", ddlTheme.SelectedValue);
+            cmd.Parameters.AddWithValue("@BookingDate", txtDate.Text);
+            cmd.Parameters.AddWithValue("@BookingTime", ddlTime.SelectedValue);
 
             con.Open();
 
