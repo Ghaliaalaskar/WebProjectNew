@@ -41,8 +41,24 @@
               
                 <asp:TextBox ID="txtEmail" runat="server" CssClass="input-field" placeholder="Email"></asp:TextBox>
                 
+                <asp:RequiredFieldValidator ID="rfvEmail" runat="server" 
+    ControlToValidate="txtEmail" 
+    ErrorMessage="* Email is required" 
+    ForeColor="#FF6B6B" 
+    Display="Dynamic" 
+    style="display:block; text-align:left; font-size:14px; margin-bottom:10px; padding-left:10px;">
+</asp:RequiredFieldValidator>
+
                 <asp:TextBox ID="txtPass" runat="server" CssClass="input-field" TextMode="Password" placeholder="password"></asp:TextBox>
                 
+                <asp:RequiredFieldValidator ID="rfvPass" runat="server" 
+    ControlToValidate="txtPass" 
+    ErrorMessage="* Password is required" 
+    ForeColor="#FF6B6B" 
+    Display="Dynamic" 
+    style="display:block; text-align:left; font-size:14px; margin-bottom:10px; padding-left:10px;">
+</asp:RequiredFieldValidator>
+
                 <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn-submit" OnClick="btnLogin_Click"/>
                 
                 <div class="footer-text">

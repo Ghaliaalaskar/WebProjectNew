@@ -4,7 +4,7 @@
 <html>
 <head runat="server">
     <title>About Us - Party Planner</title>
-    <!-- إضافة مكتبة Font Awesome للحصول على شكل أيقونة الهوم -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -70,12 +70,12 @@
             color: #d1d1d1;
         }
 
-        /* تنسيق أيقونة الهوم في الزاوية السفلية اليسرى */
+        
         .home-icon-fixed {
             position: fixed;
             bottom: 30px;
             left: 30px;
-            background-color: #70677A; /* نفس لون الموف الخاص بمشروعكم */
+            background-color: #70677A; 
             color: white;
             width: 60px;
             height: 60px;
@@ -92,7 +92,7 @@
 
         .home-icon-fixed:hover {
             background-color: #5D5467;
-            transform: scale(1.1); /* تكبير بسيط عند التمرير */
+            transform: scale(1.1); 
         }
     </style>
 </head>
@@ -111,7 +111,7 @@
             </div>
         </div>
 
-        <!-- إضافة أيقونة الهوم العائمة -->
+        
         <asp:HyperLink ID="lnkHome" runat="server" NavigateUrl="~/welcomepage.aspx" CssClass="home-icon-fixed">
             <i class="fas fa-home"></i>
         </asp:HyperLink>
