@@ -65,10 +65,10 @@
                 <asp:HyperLink ID="lnkAddTheme" runat="server" NavigateUrl="~/AddThemes.aspx" CssClass="btn-action">
                     <i class="fas fa-plus-square"></i> Add new Themes
                 </asp:HyperLink>
-                <asp:HyperLink ID="lnkAddAvail" runat="server" NavigateUrl="~/AddAvailability.aspx" CssClass="btn-action">
+                <asp:HyperLink ID="lnkAddAvail" runat="server" NavigateUrl="~/AddSlot.aspx" CssClass="btn-action">
                     <i class="fas fa-plus-circle"></i> Add Availability
                 </asp:HyperLink>
-                <asp:HyperLink ID="lnkViewBook" runat="server" NavigateUrl="~/ViewBookings.aspx" CssClass="btn-action">
+                <asp:HyperLink ID="lnkViewBook" runat="server" NavigateUrl="~/ManageBookings.aspx" CssClass="btn-action">
                     <i class="fas fa-search"></i> View All Bookings
                 </asp:HyperLink>
                 <asp:HyperLink ID="lnkManageUsers" runat="server" NavigateUrl="~/ManageUsers.aspx" CssClass="btn-action">
