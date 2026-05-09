@@ -180,7 +180,7 @@ Inherits="WebProjectNew.ManageAvailability" %>
 
     <div style="text-align:center;">
 
-        <asp:Label ID="lblMessage"
+        &nbsp;<asp:Label ID="lblMessage"
             runat="server"
             ForeColor="LimeGreen"
             Font-Size="20px"
