@@ -47,10 +47,44 @@
                 <h2>Registration</h2>
                 <p>create an Account</p>
                 <asp:TextBox ID="txtName" runat="server" CssClass="input-field" placeholder="Full Name"></asp:TextBox>
+
+                <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtName" 
+    ErrorMessage="* Name is required" ForeColor="#FF6B6B" Display="Dynamic" 
+    style="display:block; text-align:left; font-size:13px; margin-bottom:8px; padding-left:10px;"></asp:RequiredFieldValidator>
+
                 <asp:TextBox ID="txtEmail" runat="server" CssClass="input-field" placeholder="Email"></asp:TextBox>
+
+                <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" 
+    ErrorMessage="* Email is required" ForeColor="#FF6B6B" Display="Dynamic" 
+    style="display:block; text-align:left; font-size:13px; margin-bottom:5px; padding-left:10px;"></asp:RequiredFieldValidator>
+
+<asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" 
+    ErrorMessage="* Must be a valid .com email" ValidationExpression="^.*\.com$" 
+    ForeColor="#FF6B6B" Display="Dynamic" 
+    style="display:block; text-align:left; font-size:13px; margin-bottom:8px; padding-left:10px;"></asp:RegularExpressionValidator>
+
                 <asp:TextBox ID="txtPhone" runat="server" CssClass="input-field" placeholder="Phone Number"></asp:TextBox>
+
+                <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtPhone" 
+    ErrorMessage="* Phone is required" ForeColor="#FF6B6B" Display="Dynamic" 
+    style="display:block; text-align:left; font-size:13px; margin-bottom:8px; padding-left:10px;"></asp:RequiredFieldValidator>
+
                 <asp:TextBox ID="txtPass" runat="server" CssClass="input-field" TextMode="Password" placeholder="Password"></asp:TextBox>
+
+                <asp:RequiredFieldValidator ID="rfvPass" runat="server" ControlToValidate="txtPass" 
+    ErrorMessage="* Password is required" ForeColor="#FF6B6B" Display="Dynamic" 
+    style="display:block; text-align:left; font-size:13px; margin-bottom:8px; padding-left:10px;"></asp:RequiredFieldValidator>
+
                 <asp:TextBox ID="txtConfirm" runat="server" CssClass="input-field" TextMode="Password" placeholder="Confirm Password"></asp:TextBox>
+
+                <asp:RequiredFieldValidator ID="rfvConfirm" runat="server" ControlToValidate="txtConfirm" 
+    ErrorMessage="* Please confirm password" ForeColor="#FF6B6B" Display="Dynamic" 
+    style="display:block; text-align:left; font-size:13px; margin-bottom:5px; padding-left:10px;"></asp:RequiredFieldValidator>
+
+<asp:CompareValidator ID="cvPass" runat="server" ControlToValidate="txtConfirm" ControlToCompare="txtPass" 
+    ErrorMessage="* Passwords do not match" ForeColor="#FF6B6B" Display="Dynamic" 
+    style="display:block; text-align:left; font-size:13px; margin-bottom:8px; padding-left:10px;"></asp:CompareValidator>
+
                 <asp:Button ID="btnReg" runat="server" Text="Register" CssClass="btn-submit" OnClick="btnRegister_Click" />
             </div>
             <a href="welcomepage.aspx" class="home-link"><i class="fa-solid fa-house-chimney-window"></i></a>
