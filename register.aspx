@@ -51,7 +51,7 @@
                 <asp:TextBox ID="txtPhone" runat="server" CssClass="input-field" placeholder="Phone Number"></asp:TextBox>
                 <asp:TextBox ID="txtPass" runat="server" CssClass="input-field" TextMode="Password" placeholder="Password"></asp:TextBox>
                 <asp:TextBox ID="txtConfirm" runat="server" CssClass="input-field" TextMode="Password" placeholder="Confirm Password"></asp:TextBox>
-                <asp:Button ID="btnReg" runat="server" Text="Register" CssClass="btn-submit"  PostBackUrl="~/PickTheme.aspx"/>
+                <asp:Button ID="btnReg" runat="server" Text="Register" CssClass="btn-submit" OnClick="btnRegister_Click" />
             </div>
             <a href="welcomepage.aspx" class="home-link"><i class="fa-solid fa-house-chimney-window"></i></a>
         </div>

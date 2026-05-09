@@ -26,9 +26,9 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style6" style="text-align: right">
+            <td class="auto-style6" style="text-align: center">
                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-                    DataKeyNames="AppointmentID" OnRowDeleting="GridView1_RowDeleting" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" Width="575px" BackColor="#CCCCCC">
+                    DataKeyNames="AppointmentID" OnRowDeleting="GridView1_RowDeleting" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" Width="600px" BackColor="#CCCCCC">
                     <Columns>
                     <asp:BoundField DataField="ServiceName" HeaderText="Service Name" />
                     <asp:BoundField DataField="AppointmentDate" HeaderText="Date" DataFormatString="{0:yyyy-MM-dd}" />

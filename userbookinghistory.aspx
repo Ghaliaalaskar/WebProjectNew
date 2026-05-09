@@ -33,7 +33,7 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td>
+            <td style="text-align: center">
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="table-style" BackColor="#CCCCCC" OnSelectedIndexChanged="GridViewHistory_SelectedIndexChanged" Width="600px">
                 <Columns>
                  <asp:BoundField DataField="ServiceName" HeaderText="Service Name" />

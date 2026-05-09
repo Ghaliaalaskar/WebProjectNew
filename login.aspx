@@ -8,7 +8,7 @@
     <style>
         body, html { margin: 0; padding: 0; height: 100%; font-family: 'Times New Roman', serif; overflow: hidden; }
         .main-bg { 
-            background-image: linear-gradient(rgba(30, 20, 40, 0.7), rgba(10, 10, 15, 0.85)), url('bg.jpeg'); 
+            background-image: linear-gradient(rgba(30, 20, 40, 0.7), rgba(10, 10, 15, 0.85)), url('welcome.jpeg'); 
             background-size: cover; background-position: center; height: 100vh; display: flex; justify-content: center; align-items: center; 
         }
         .login-card {
@@ -29,18 +29,6 @@
         .footer-text { margin-top: 25px; font-size: 18px; }
         .footer-text a { color: white; text-decoration: none; font-weight: bold; }
         .home-link { position: absolute; bottom: 30px; left: 40px; color: white; font-size: 35px; }
-
-        .main-bg { 
-    
-    background-image: linear-gradient(rgba(30, 20, 40, 0.7), rgba(10, 10, 15, 0.85)), 
-                      url('welcome.jpeg'); 
-    background-size: cover; 
-    background-position: center; 
-    height: 100vh; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-}
     </style>
 </head>
 <body>
@@ -49,11 +37,18 @@
             <div class="login-card">
                 <div class="user-icon"><i class="fa-regular fa-circle-user"></i></div>
                 <h2>Login</h2>
+                
+              
                 <asp:TextBox ID="txtEmail" runat="server" CssClass="input-field" placeholder="Email"></asp:TextBox>
+                
                 <asp:TextBox ID="txtPass" runat="server" CssClass="input-field" TextMode="Password" placeholder="password"></asp:TextBox>
-                <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn-submit" PostBackUrl="~/PickTheme.aspx" OnClick="btnLogin_Click"/>
+                
+                <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn-submit" OnClick="btnLogin_Click"/>
+                
                 <div class="footer-text">
-                    Don't have an account? <a href="register.aspx">Register</a>
+                    Don't have an account? 
+                    <asp:Label ID="Label1" runat="server" ForeColor="#CC3300"></asp:Label>
+                    <a href="register.aspx">Register</a>
                 </div>
             </div>
             <a href="welcomepage.aspx" class="home-link"><i class="fa-solid fa-house-chimney-window"></i></a>
