@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace WebProjectNew
 {
@@ -11,14 +13,27 @@ namespace WebProjectNew
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid)
-            {
-                txtThemeName.Text = "";
-                txtDuration.Text = "";
-                txtPrice.Text = "";
+            string cs = ConfigurationManager.ConnectionStrings["PartyPlannerDB"].ConnectionString;
 
-                lblMessage.Text = "Theme deleted successfully";
-            }
+            SqlConnection con = new SqlConnection(cs);
+
+            string query = "DELETE FROM Services WHERE ServiceName=@ServiceName";
+
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            cmd.Parameters.AddWithValue("@ServiceName", txtThemeName.Text);
+
+            con.Open();
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            txtThemeName.Text = "";
+            txtDuration.Text = "";
+            txtPrice.Text = "";
+
+            lblMessage.Text = "Theme deleted successfully";
         }
     }
 }
