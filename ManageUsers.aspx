@@ -238,7 +238,7 @@ ForeColor="Black" />
 ID="ValidationSummary1"
 runat="server"
 ForeColor="Red"
-HeaderText="Please fill all required fields"/>
+HeaderText="Please fill all required fields" Height="121px"/>
 
 </div>
 
