@@ -252,7 +252,7 @@ OnClick="btnAdd_Click" />
 
 <div style="text-align:center;">
 
-<asp:Label
+&nbsp;<asp:Label
 ID="lblMessage"
 runat="server"
 ForeColor="LimeGreen"
