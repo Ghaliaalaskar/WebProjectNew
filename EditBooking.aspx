@@ -1,116 +1,185 @@
-﻿<%@ Page Title="Edit Booking"
-Language="C#"
-MasterPageFile="~/AdminMaster.Master"
-AutoEventWireup="true" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.Master"
+AutoEventWireup="true"
+CodeBehind="EditBooking.aspx.cs"
+Inherits="WebProjectNew.EditBooking" %>
 
-<asp:Content ID="Content1"
-ContentPlaceHolderID="ContentPlaceHolder1"
-runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
 
-<div style="
-width:980px;
-margin-left:15px;
-margin-top:35px;
-font-family:Georgia;
-">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div style="
-width:851px;
-height:62px;
-background-color:#70677A;
-color:white;
-font-size:42px;
-line-height:62px;
-padding-left:28px;
-margin-bottom:25px;
-">
+<div style="width:1000px;margin:auto;background:white;padding:20px;">
 
-Edit Booking
+    <div style="background:#5e5a6e;
+        color:white;
+        font-size:38px;
+        font-family:Georgia;
+        padding:15px;">
+        Edit Booking
+    </div>
 
-</div>
+    <br />
 
-<div style="
-width:620px;
-margin-left:70px;
-background-color:#70677A;
-color:white;
-font-size:20px;
-">
+    <div style="width:700px;
+        margin:auto;
+        background:#5e5a6e;
+        padding:40px;
+        color:white;
+        font-family:Georgia;">
 
-<div style="
-height:62px;
-background-color:#d5cedc;
-color:black;
-font-size:26px;
-line-height:62px;
-padding-left:20px;
-">
+        <table style="width:100%;">
 
-Edit booking:
+            <tr>
+                <td style="padding-bottom:20px;">Client Name:</td>
 
-</div>
+                <td>
 
-<div style="
-padding-top:38px;
-padding-left:35px;
-padding-right:35px;
-padding-bottom:32px;
-">
+                    <asp:TextBox ID="txtClientName"
+                        runat="server"
+                        Width="350px"
+                        Height="30px">
+                    </asp:TextBox>
 
-<div style="margin-bottom:22px;">
-<label style="display:inline-block; width:120px;">Client Name:</label>
-<input type="text" style="width:374px;height:30px;font-size:16px;font-family:Georgia;" />
-</div>
+                    <br />
 
-<div style="margin-bottom:22px;">
-<label style="display:inline-block; width:120px;">Theme:</label>
-<input type="text" style="width:374px;height:30px;font-size:16px;font-family:Georgia;" />
-</div>
+                    <asp:RequiredFieldValidator
+                        ID="rfvClientName"
+                        runat="server"
+                        ControlToValidate="txtClientName"
+                        ErrorMessage="Required"
+                        ForeColor="Red">
+                    </asp:RequiredFieldValidator>
 
-<div style="margin-bottom:22px;">
-<label style="display:inline-block; width:120px;">Date:</label>
-<input type="text" style="width:374px;height:30px;font-size:16px;font-family:Georgia;" />
-</div>
+                </td>
+            </tr>
 
-<div style="margin-bottom:32px;">
-<label style="display:inline-block; width:120px;">Time:</label>
-<input type="text" style="width:374px;height:30px;font-size:16px;font-family:Georgia;" />
-</div>
+            <tr>
+                <td style="padding-bottom:20px;">Theme:</td>
 
-<div style="text-align:right;">
+                <td>
 
-    <a href="ManageBooking.aspx"
-style="
-background-color:#eeeeee;
-border:1px solid gray;
-padding:8px 16px;
-text-decoration:none;
-color:black;
-font-size:17px;
-font-family:Georgia;
-margin-right:55px;
-">
-&nbsp;Cancel
-</a>
+                    <asp:DropDownList ID="ddlTheme"
+                        runat="server"
+                        Width="355px"
+                        Height="35px">
 
-    <a href="ManageBooking.aspx"
-style="
-background-color:#eeeeee;
-border:1px solid gray;
-padding:8px 18px;
-text-decoration:none;
-color:black;
-font-size:17px;
-font-family:Georgia;
-">
-&nbsp;Save
-</a>
+                        <asp:ListItem Text="Select Theme" Value=""></asp:ListItem>
+                        <asp:ListItem>Baby Shower</asp:ListItem>
+                        <asp:ListItem>Bridal Shower</asp:ListItem>
+                        <asp:ListItem>Graduation</asp:ListItem>
 
-</div>
+                    </asp:DropDownList>
 
-</div>
+                    <br />
 
-</div>
+                    <asp:RequiredFieldValidator
+                        ID="rfvTheme"
+                        runat="server"
+                        ControlToValidate="ddlTheme"
+                        InitialValue=""
+                        ErrorMessage="Required"
+                        ForeColor="Red">
+                    </asp:RequiredFieldValidator>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding-bottom:20px;">Date:</td>
+
+                <td>
+
+                    <asp:TextBox ID="txtDate"
+                        runat="server"
+                        TextMode="Date"
+                        Width="350px"
+                        Height="30px">
+                    </asp:TextBox>
+
+                    <br />
+
+                    <asp:RequiredFieldValidator
+                        ID="rfvDate"
+                        runat="server"
+                        ControlToValidate="txtDate"
+                        ErrorMessage="Required"
+                        ForeColor="Red">
+                    </asp:RequiredFieldValidator>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding-bottom:20px;">Time:</td>
+
+                <td>
+
+                    <asp:DropDownList ID="ddlTime"
+                        runat="server"
+                        Width="355px"
+                        Height="35px">
+
+                        <asp:ListItem Text="Select Time" Value=""></asp:ListItem>
+                        <asp:ListItem>4:00 PM</asp:ListItem>
+                        <asp:ListItem>5:00 PM</asp:ListItem>
+                        <asp:ListItem>6:00 PM</asp:ListItem>
+                        <asp:ListItem>7:00 PM</asp:ListItem>
+
+                    </asp:DropDownList>
+
+                    <br />
+
+                    <asp:RequiredFieldValidator
+                        ID="rfvTime"
+                        runat="server"
+                        ControlToValidate="ddlTime"
+                        InitialValue=""
+                        ErrorMessage="Required"
+                        ForeColor="Red">
+                    </asp:RequiredFieldValidator>
+
+                </td>
+            </tr>
+
+        </table>
+
+        <br />
+
+        <div style="text-align:right;">
+
+            <asp:Button ID="btnCancel"
+                runat="server"
+                Text="Cancel"
+                Width="100px"
+                Height="40px"
+                CausesValidation="false"
+                PostBackUrl="~/ManageBookings.aspx" />
+
+            &nbsp;
+
+            <asp:Button ID="btnSave"
+                runat="server"
+                Text="Save"
+                Width="100px"
+                Height="40px"
+                OnClick="btnSave_Click" />
+
+        </div>
+
+        <br />
+
+        <div style="text-align:center;">
+
+            <asp:Label ID="lblMessage"
+                runat="server"
+                ForeColor="LimeGreen"
+                Font-Size="20px"
+                Font-Bold="true">
+            </asp:Label>
+
+        </div>
+
+    </div>
 
 </div>
 
