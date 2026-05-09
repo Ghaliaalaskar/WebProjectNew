@@ -95,7 +95,7 @@ OnClick="btnDelete_Click" />
 <tr style="height:70px;background:white;">
 <td colspan="4" style="text-align:right;padding-right:15px;">
 
-<asp:Button ID="btnAddTheme" runat="server"
+&nbsp;<asp:Button ID="btnAddTheme" runat="server"
 Text="Add Themes"
 PostBackUrl="~/AddThemes.aspx"
 CausesValidation="false"
