@@ -69,8 +69,15 @@
   <ItemGroup>
     <Content Include="about.aspx" />
     <Content Include="aboutus.jpg" />
+    <Content Include="AddSlot.aspx" />
+    <Content Include="AddThemes.aspx" />
+    <Content Include="AddUser.aspx" />
     <Content Include="AdminDashboard.aspx" />
     <Content Include="AppointmentConfirmed.aspx" />
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="BabyDetailsGuest.aspx" />
     <Content Include="BabyShowerDetails.aspx" />
     <Content Include="BookYourAppointment.aspx" />
@@ -78,6 +85,10 @@
     <Content Include="BridalShowerDetails.aspx" />
     <Content Include="changepassword.aspx" />
     <Content Include="DiscoverThemes.aspx" />
+    <Content Include="EditAvailability.aspx" />
+    <Content Include="EditBooking.aspx" />
+    <Content Include="EditTheme.aspx" />
+    <Content Include="EditUser.aspx" />
     <Content Include="GradDetailsGuest.aspx" />
     <Content Include="GraduationDetails.aspx" />
     <Content Include="images\admin-icon.png" />
@@ -85,6 +96,10 @@
     <Content Include="images\bride.jpg" />
     <Content Include="images\grad.jpg" />
     <Content Include="login.aspx" />
+    <Content Include="ManageAvailability.aspx" />
+    <Content Include="ManageBookings.aspx" />
+    <Content Include="ManageThemes.aspx" />
+    <Content Include="ManageUsers.aspx" />
     <Content Include="myaccount.aspx" />
     <Content Include="mybooking.aspx" />
     <Content Include="PickTheme.aspx" />
@@ -106,6 +121,27 @@
     </Compile>
     <Compile Include="about.aspx.designer.cs">
       <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddSlot.aspx.cs">
+      <DependentUpon>AddSlot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddSlot.aspx.designer.cs">
+      <DependentUpon>AddSlot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddThemes.aspx.cs">
+      <DependentUpon>AddThemes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddThemes.aspx.designer.cs">
+      <DependentUpon>AddThemes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddUser.aspx.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddUser.aspx.designer.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminDashboard.aspx.cs">
       <DependentUpon>AdminDashboard.aspx</DependentUpon>
@@ -177,6 +213,34 @@
     <Compile Include="DiscoverThemes.aspx.designer.cs">
       <DependentUpon>DiscoverThemes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditAvailability.aspx.cs">
+      <DependentUpon>EditAvailability.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditAvailability.aspx.designer.cs">
+      <DependentUpon>EditAvailability.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditBooking.aspx.cs">
+      <DependentUpon>EditBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditBooking.aspx.designer.cs">
+      <DependentUpon>EditBooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditTheme.aspx.cs">
+      <DependentUpon>EditTheme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditTheme.aspx.designer.cs">
+      <DependentUpon>EditTheme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditUser.aspx.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditUser.aspx.designer.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GradDetailsGuest.aspx.cs">
       <DependentUpon>GradDetailsGuest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -197,6 +261,34 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageAvailability.aspx.cs">
+      <DependentUpon>ManageAvailability.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageAvailability.aspx.designer.cs">
+      <DependentUpon>ManageAvailability.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageBookings.aspx.cs">
+      <DependentUpon>ManageBookings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageBookings.aspx.designer.cs">
+      <DependentUpon>ManageBookings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageThemes.aspx.cs">
+      <DependentUpon>ManageThemes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageThemes.aspx.designer.cs">
+      <DependentUpon>ManageThemes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUsers.aspx.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageUsers.aspx.designer.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterDiscoverThemes.Master.cs">
       <DependentUpon>MasterDiscoverThemes.Master</DependentUpon>

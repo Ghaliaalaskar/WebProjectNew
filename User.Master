@@ -14,13 +14,8 @@
         }
         .auto-style2 {
             width: 293px;
-            height: 156px;
-        }
-        .auto-style3 {
-            width: 293px;
-            text-align: center;
-        }
-    </style>
+            }
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -28,8 +23,37 @@
         </div>
         <table align="center" cellpadding="3" cellspacing="3" class="auto-style1">
             <tr>
-                <td class="auto-style2" style="border-color: #FFFFFF; background-color: #8B77A2"></td>
-                <td rowspan="2">
+                <td class="auto-style2" style="border-color: #FFFFFF; background-color: #8B77A2; text-align: center;" id="8">
+                    <asp:Image ID="Image1" runat="server" Height="105px" ImageUrl="~/images/admin-icon.png" style="margin-top: 22px" Width="114px" />
+                    <br />
+                    <br />
+                    <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="White">My Dashboard</asp:HyperLink>
+                    <br />
+                    <br />
+&nbsp;<br />
+                    <asp:HyperLink ID="HyperLink2" runat="server" Font-Bold="True" Font-Underline="False" ForeColor="White" NavigateUrl="~/myaccount.aspx">My Account</asp:HyperLink>
+&nbsp;
+                    <br />
+                    <br />
+                    <br />
+                    <asp:HyperLink ID="HyperLink3" runat="server" Font-Bold="True" Font-Underline="False" ForeColor="White" NavigateUrl="~/mybooking.aspx">My Booking</asp:HyperLink>
+                    <br />
+                    <br />
+&nbsp;
+                    <br />
+                    <asp:HyperLink ID="HyperLink4" runat="server" Font-Bold="True" Font-Underline="False" ForeColor="White" NavigateUrl="~/userbookinghistory.aspx">Booking History</asp:HyperLink>
+&nbsp;<br />
+                    <br />
+                    <br />
+                    <asp:HyperLink ID="HyperLink5" runat="server" Font-Bold="False" ForeColor="White">Home</asp:HyperLink>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+&nbsp;<asp:HyperLink ID="HyperLink6" runat="server" Font-Bold="True" Font-Underline="False" ForeColor="White" NavigateUrl="~/userlogout.aspx">Log out</asp:HyperLink>
+                </td>
+                <td>
                     <p>
                         &nbsp;</p>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -57,36 +81,7 @@
             </asp:ContentPlaceHolder>
                 </td>
             </tr>
-            <tr>
-                <td class="auto-style3" style="border-color: #FFFFFF; background-color: #8B77A2">
-                    <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="White">My Dashboard</asp:HyperLink>
-                    <br />
-                    <br />
-&nbsp;<br />
-                    <asp:HyperLink ID="HyperLink2" runat="server" Font-Bold="True" Font-Underline="False" ForeColor="White" NavigateUrl="~/myaccount.aspx">My Account</asp:HyperLink>
-&nbsp;
-                    <br />
-                    <br />
-                    <br />
-                    <asp:HyperLink ID="HyperLink3" runat="server" Font-Bold="True" Font-Underline="False" ForeColor="White" NavigateUrl="~/mybooking.aspx">My Booking</asp:HyperLink>
-                    <br />
-                    <br />
-&nbsp;
-                    <br />
-                    <asp:HyperLink ID="HyperLink4" runat="server" Font-Bold="True" Font-Underline="False" ForeColor="White" NavigateUrl="~/userbookinghistory.aspx">Booking History</asp:HyperLink>
-&nbsp;<br />
-                    <br />
-                    <br />
-                    <asp:HyperLink ID="HyperLink5" runat="server" Font-Bold="False" ForeColor="White">Home</asp:HyperLink>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-&nbsp;<asp:HyperLink ID="HyperLink6" runat="server" Font-Bold="True" Font-Underline="False" ForeColor="White" NavigateUrl="~/userlogout.aspx">Log out</asp:HyperLink>
-                </td>
-            </tr>
-        </table>
+            </table>
     </form>
 </body>
 </html>
