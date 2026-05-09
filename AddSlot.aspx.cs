@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace WebProjectNew
 {
-    public partial class AddThemes : System.Web.UI.Page
+    public partial class AddSlot : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,23 +19,19 @@ namespace WebProjectNew
 
                 SqlConnection con = new SqlConnection(cs);
 
-                string query = "INSERT INTO Services(ServiceName, Description, Duration, Price, ServicePhoto) VALUES(@ServiceName,@Description,@Duration,@Price,@ServicePhoto)";
+                string query = "INSERT INTO Availability(ServiceID, AvailableDate, AvailableTime) VALUES(@ServiceID, @AvailableDate, @AvailableTime)";
 
                 SqlCommand cmd = new SqlCommand(query, con);
 
-                cmd.Parameters.AddWithValue("@ServiceName", txtName.Text);
-                cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
-                cmd.Parameters.AddWithValue("@Duration", txtDuration.Text);
-                cmd.Parameters.AddWithValue("@Price", txtPrice.Text);
-                cmd.Parameters.AddWithValue("@ServicePhoto", FileUpload1.FileName);
+                cmd.Parameters.AddWithValue("@ServiceID", ddlTheme.SelectedIndex + 1);
+                cmd.Parameters.AddWithValue("@AvailableDate", txtDate.Text);
+                cmd.Parameters.AddWithValue("@AvailableTime", ddlTime.SelectedValue);
 
                 con.Open();
-
                 cmd.ExecuteNonQuery();
-
                 con.Close();
 
-                lblMessage.Text = "Theme added successfully";
+                
             }
         }
     }
