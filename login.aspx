@@ -49,6 +49,15 @@
     style="display:block; text-align:left; font-size:14px; margin-bottom:10px; padding-left:10px;">
 </asp:RequiredFieldValidator>
 
+                <asp:RegularExpressionValidator ID="revEmail" runat="server" 
+    ControlToValidate="txtEmail" 
+    ErrorMessage="* Email must end with .com" 
+    ValidationExpression="^.*\.com$" 
+    ForeColor="#FF6B6B" 
+    Display="Dynamic" 
+    style="display:block; text-align:left; font-size:14px; margin-bottom:10px; padding-left:10px;">
+</asp:RegularExpressionValidator>
+
                 <asp:TextBox ID="txtPass" runat="server" CssClass="input-field" TextMode="Password" placeholder="password"></asp:TextBox>
                 
                 <asp:RequiredFieldValidator ID="rfvPass" runat="server" 
