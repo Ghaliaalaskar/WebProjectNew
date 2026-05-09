@@ -1,220 +1,193 @@
-﻿<%@ Page Title="Manage Availability"
-Language="C#"
-MasterPageFile="~/AdminMaster.Master"
-AutoEventWireup="true" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.Master"
+AutoEventWireup="true"
+CodeBehind="ManageAvailability.aspx.cs"
+Inherits="WebProjectNew.ManageAvailability" %>
 
-<asp:Content ID="Content1"
-ContentPlaceHolderID="ContentPlaceHolder1"
-runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
 
-<div style="
-width:980px;
-margin-left:15px;
-margin-top:35px;
-font-family:Georgia;
-">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div style="
-width:850px;
-height:62px;
-background-color:#70677A;
-color:white;
-font-size:42px;
-line-height:62px;
-padding-left:28px;
-">
+<div style="width:1000px;margin:auto;background:white;padding:20px;">
 
-Manage Availability
+    <div style="background:#5e5a6e;
+        color:white;
+        font-size:38px;
+        font-family:Georgia;
+        padding:15px;">
+        Manage Availability
+    </div>
 
-</div>
+    <table style="width:100%;
+        border-collapse:collapse;
+        text-align:center;">
 
-<table style="
-width:850px;
-border-collapse:collapse;
-background-color:#70677A;
-color:white;
-font-size:18px;
-text-align:center;
-">
+        <!-- Header -->
+        <tr style="background:white;
+            height:60px;
+            font-size:18px;
+            font-weight:bold;">
 
-<tr style="
-background-color:#e5dfeb;
-color:black;
-height:55px;
-font-weight:bold;
-">
+            <td>Themes Name</td>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Status</td>
+            <td>Actions</td>
 
-<td>Themes Name</td>
-<td>Date</td>
-<td>Time</td>
-<td>Status</td>
-<td>Actions</td>
+        </tr>
 
-</tr>
+        <!-- Row -->
+        <tr style="background:#5e5a6e;
+            height:100px;
+            color:white;">
 
-<tr style="height:90px;">
+            <!-- Theme -->
+            <td>
 
-<td></td>
+                <asp:TextBox ID="txtThemeName"
+                    runat="server"
+                    Width="180px"
+                    Height="30px">
+                </asp:TextBox>
 
-<td></td>
+                <br />
 
-<td></td>
+                <asp:RequiredFieldValidator
+                    ID="rfvTheme"
+                    runat="server"
+                    ControlToValidate="txtThemeName"
+                    ErrorMessage="Required"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
 
-<td></td>
+            </td>
 
-<td>
+            <!-- Date -->
+            <td>
 
-<a href="EditAvailability.aspx"
-style="
-color:white;
-text-decoration:none;
-">
-Edit
-</a>
+                <asp:TextBox ID="txtDate"
+                    runat="server"
+                    TextMode="Date"
+                    Width="140px"
+                    Height="30px">
+                </asp:TextBox>
 
-&nbsp;&nbsp;
+                <br />
 
-<a href="#"
-style="
-color:white;
-text-decoration:none;
-">
-Delete
-</a>
+                <asp:RequiredFieldValidator
+                    ID="rfvDate"
+                    runat="server"
+                    ControlToValidate="txtDate"
+                    ErrorMessage="Required"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
 
-</td>
+            </td>
 
-</tr>
+            <!-- Time -->
+            <td>
 
-<tr style="height:90px;">
+                <asp:TextBox ID="txtTime"
+                    runat="server"
+                    TextMode="Time"
+                    Width="120px"
+                    Height="30px">
+                </asp:TextBox>
 
-<td></td>
+                <br />
 
-<td></td>
+                <asp:RequiredFieldValidator
+                    ID="rfvTime"
+                    runat="server"
+                    ControlToValidate="txtTime"
+                    ErrorMessage="Required"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
 
-<td></td>
+            </td>
 
-<td></td>
+            <!-- Status -->
+            <td>
 
-<td>
+                <asp:DropDownList ID="ddlStatus"
+                    runat="server"
+                    Width="120px"
+                    Height="35px">
 
-<a href="EditAvailability.aspx"
-style="
-color:white;
-text-decoration:none;
-">
-Edit
-</a>
+                    <asp:ListItem Text="Select" Value=""></asp:ListItem>
+                    <asp:ListItem>Available</asp:ListItem>
+                    <asp:ListItem>Booked</asp:ListItem>
 
-&nbsp;&nbsp;
+                </asp:DropDownList>
 
-<a href="#"
-style="
-color:white;
-text-decoration:none;
-">
-Delete
-</a>
+                <br />
 
-</td>
+                <asp:RequiredFieldValidator
+                    ID="rfvStatus"
+                    runat="server"
+                    ControlToValidate="ddlStatus"
+                    InitialValue=""
+                    ErrorMessage="Required"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
 
-</tr>
+            </td>
 
-<tr style="height:90px;">
+            <!-- Buttons -->
+            <td>
 
-<td></td>
+                <asp:Button ID="btnEdit"
+                    runat="server"
+                    Text="Edit"
+                    Width="70px"
+                    Height="35px" />
 
-<td></td>
+                &nbsp;
 
-<td></td>
+                <asp:Button ID="btnDelete"
+                    runat="server"
+                    Text="Delete"
+                    Width="70px"
+                    Height="35px"
+                    CausesValidation="false"
+                    OnClick="btnDelete_Click" />
 
-<td></td>
+            </td>
 
-<td>
+        </tr>
 
-<a href="EditAvailability.aspx"
-style="
-color:white;
-text-decoration:none;
-">
-Edit
-</a>
+        <!-- Add Slot -->
+        <tr style="height:70px;background:white;">
 
-&nbsp;&nbsp;
+            <td colspan="5"
+                style="text-align:right;
+                padding-right:20px;">
 
-<a href="#"
-style="
-color:white;
-text-decoration:none;
-">
-Delete
-</a>
+                <asp:Button ID="btnAddSlot"
+                    runat="server"
+                    Text="Add Slot"
+                    PostBackUrl="~/AddSlot.aspx"
+                    Width="120px"
+                    Height="40px" />
 
-</td>
+            </td>
 
-</tr>
+        </tr>
 
-<tr style="height:90px;">
+    </table>
 
-<td></td>
+    <br />
 
-<td></td>
+    <div style="text-align:center;">
 
-<td></td>
+        <asp:Label ID="lblMessage"
+            runat="server"
+            ForeColor="LimeGreen"
+            Font-Size="20px"
+            Font-Bold="true">
+        </asp:Label>
 
-<td></td>
-
-<td>
-
-<a href="EditAvailability.aspx"
-style="
-color:white;
-text-decoration:none;
-">
-Edit
-</a>
-
-&nbsp;&nbsp;
-
-<a href="#"
-style="
-color:white;
-text-decoration:none;
-">
-Delete
-</a>
-
-</td>
-
-</tr>
-
-<tr style="background-color:white;">
-
-<td colspan="5"
-style="
-text-align:right;
-padding:10px;
-">
-
-<a href="AddSlot.aspx">
-
-<input type="button"
-value="⊕ Add slot"
-style="
-width:140px;
-height:38px;
-font-size:18px;
-font-family:Georgia;
-cursor:pointer;
-" />
-
-</a>
-
-</td>
-
-</tr>
-
-</table>
+    </div>
 
 </div>
 

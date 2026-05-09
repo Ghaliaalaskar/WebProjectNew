@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace WebProjectNew
 {
@@ -12,6 +7,16 @@ namespace WebProjectNew
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            txtThemeName.Text = "";
+            txtDate.Text = "";
+            txtTime.Text = "";
+            ddlStatus.SelectedIndex = 0;
+
+            lblMessage.Text = "Deleted Successfully";
         }
     }
 }
