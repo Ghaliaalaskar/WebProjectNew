@@ -1,183 +1,158 @@
-﻿<%@ Page Title="Edit User"
-Language="C#"
-MasterPageFile="~/AdminMaster.Master"
-AutoEventWireup="true" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.Master"
+AutoEventWireup="true"
+CodeBehind="EditUser.aspx.cs"
+Inherits="WebProjectNew.EditUser" %>
 
-<asp:Content ID="Content1"
-ContentPlaceHolderID="ContentPlaceHolder1"
-runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
 
-<div style="
-width:980px;
-margin-left:15px;
-margin-top:35px;
-font-family:Georgia;
-">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<!-- TITLE -->
+<div style="width:1000px;margin:auto;background:white;padding:20px;">
 
-<div style="
-width:851px;
-height:62px;
-background-color:#70677A;
-color:white;
-font-size:42px;
-line-height:62px;
-padding-left:28px;
-margin-bottom:25px;
-">
+    <div style="background:#5e5a6e;color:white;font-size:38px;font-family:Georgia;padding:15px;">
+        Edit User
+    </div>
 
-Edit User
+    <br />
 
-</div>
+    <div style="width:600px;margin:auto;border:1px solid #cccccc;font-family:Georgia;">
 
-<!-- MAIN BOX -->
+        <div style="background:#eeeeee;padding:18px;font-size:22px;">
+            Edit User:
+        </div>
 
-<div style="
-width:640px;
-margin-left:70px;
-background-color:#70677A;
-color:white;
-">
+        <div style="background:#5e5a6e;padding:35px;color:white;">
 
-<!-- SMALL TITLE -->
+            <!-- NAME -->
+            <div style="margin-bottom:22px;">
 
-<div style="
-height:62px;
-background-color:#d5cedc;
-color:black;
-font-size:26px;
-line-height:62px;
-padding-left:20px;
-font-family:Georgia;
-">
+                <label style="display:inline-block;width:120px;">Name:</label>
 
-Edit User:
+                <asp:TextBox ID="txtName" runat="server"
+                    Width="300px"
+                    Height="30px"
+                    Font-Size="16px"
+                    Font-Names="Georgia" OnTextChanged="txtName_TextChanged">
+                </asp:TextBox>
 
-</div>
+                <br />
 
-<!-- FORM -->
+                <asp:RequiredFieldValidator
+                    ID="rfvName"
+                    runat="server"
+                    ControlToValidate="txtName"
+                    ErrorMessage="Required"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
 
-<div style="
-padding-top:35px;
-padding-left:35px;
-padding-bottom:35px;
-font-size:22px;
-font-family:Georgia;
-">
+            </div>
 
-<!-- NAME -->
+            <!-- EMAIL -->
+            <div style="margin-bottom:22px;">
 
-<div style="margin-bottom:25px;">
+                <label style="display:inline-block;width:120px;">Email:</label>
 
-<span style="
-display:inline-block;
-width:95px;
-">
+                <asp:TextBox ID="txtEmail" runat="server"
+                    Width="300px"
+                    Height="30px"
+                    Font-Size="16px"
+                    Font-Names="Georgia">
+                </asp:TextBox>
 
-Name:
+                <br />
 
-</span>
+                <asp:RequiredFieldValidator
+                    ID="rfvEmail"
+                    runat="server"
+                    ControlToValidate="txtEmail"
+                    ErrorMessage="Required"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
 
-<input type="text"
+                <br />
 
-style="
-width:320px;
-height:34px;
-font-size:18px;
-padding-left:10px;
-" />
+                <asp:RegularExpressionValidator
+                    ID="revEmail"
+                    runat="server"
+                    ControlToValidate="txtEmail"
+                    ValidationExpression="\w+@\w+\.\w+"
+                    ErrorMessage="Invalid Email"
+                    ForeColor="Yellow">
+                </asp:RegularExpressionValidator>
 
-</div>
+            </div>
 
-<!-- EMAIL -->
+            <!-- PHONE -->
+            <div style="margin-bottom:22px;">
 
-<div style="margin-bottom:25px;">
+                <label style="display:inline-block;width:120px;">Phone:</label>
 
-<span style="
-display:inline-block;
-width:95px;
-">
+                <asp:TextBox ID="txtPhone" runat="server"
+                    Width="300px"
+                    Height="30px"
+                    Font-Size="16px"
+                    Font-Names="Georgia">
+                </asp:TextBox>
 
-Email:
+                <br />
 
-</span>
+                <asp:RequiredFieldValidator
+                    ID="rfvPhone"
+                    runat="server"
+                    ControlToValidate="txtPhone"
+                    ErrorMessage="Required"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
 
-<input type="email"
+                <br />
 
-style="
-width:320px;
-height:34px;
-font-size:18px;
-padding-left:10px;
-" />
+                <asp:RegularExpressionValidator
+                    ID="revPhone"
+                    runat="server"
+                    ControlToValidate="txtPhone"
+                    ValidationExpression="^\d+$"
+                    ErrorMessage="Numbers Only"
+                    ForeColor="Yellow">
+                </asp:RegularExpressionValidator>
 
-</div>
+            </div>
 
-<!-- PHONE -->
+            <!-- BUTTONS -->
+            <div style="text-align:right;">
 
-<div style="margin-bottom:35px;">
+                <asp:Button ID="btnCancel" runat="server"
+                    Text="Cancel"
+                    Width="100px"
+                    Height="40px"
+                    CausesValidation="false"
+                    PostBackUrl="~/ManageUsers.aspx" />
 
-<span style="
-display:inline-block;
-width:95px;
-">
+                &nbsp;&nbsp;
 
-Phone:
+                <asp:Button ID="btnSave" runat="server"
+                    Text="Save"
+                    Width="100px"
+                    Height="40px"
+                    OnClick="btnSave_Click" />
 
-</span>
+            </div>
 
-<input type="text"
+            <br />
 
-style="
-width:320px;
-height:34px;
-font-size:18px;
-padding-left:10px;
-" />
+            <div style="text-align:center;">
 
-</div>
+                <asp:Label ID="lblMessage" runat="server"
+                    ForeColor="LimeGreen"
+                    Font-Size="18px"
+                    Font-Bold="true">
+                </asp:Label>
 
-<!-- BUTTONS -->
+            </div>
 
-<div style="
-margin-left:205px;
-">
+        </div>
 
-<a href="ManageUsers.aspx"
-style="
-background-color:white;
-color:black;
-padding:8px 20px;
-text-decoration:none;
-font-size:20px;
-margin-right:18px;
-border:1px solid lightgray;
-">
-
-✖ Cancel
-
-</a>
-
-<a href="ManageUsers.aspx"
-style="
-background-color:white;
-color:black;
-padding:8px 24px;
-text-decoration:none;
-font-size:20px;
-border:1px solid lightgray;
-">
-
-💾Save
-
-</a>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </div>
 
