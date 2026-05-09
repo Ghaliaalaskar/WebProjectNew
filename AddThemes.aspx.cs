@@ -6,12 +6,7 @@ namespace WebProjectNew
 {
     public partial class AddThemes : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnAdd_Click(object sender, EventArgs e)
+        protected void btnSaveTheme_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
             {
@@ -19,7 +14,7 @@ namespace WebProjectNew
 
                 SqlConnection con = new SqlConnection(cs);
 
-                string query = "INSERT INTO Services(ServiceName, Description, Duration, Price, ServicePhoto) VALUES(@ServiceName,@Description,@Duration,@Price,@ServicePhoto)";
+                string query = "INSERT INTO Services(ServiceName, Description, Duration, Price, ServicePhoto) VALUES(@ServiceName, @Description, @Duration, @Price, @ServicePhoto)";
 
                 SqlCommand cmd = new SqlCommand(query, con);
 
@@ -30,9 +25,7 @@ namespace WebProjectNew
                 cmd.Parameters.AddWithValue("@ServicePhoto", FileUpload1.FileName);
 
                 con.Open();
-
                 cmd.ExecuteNonQuery();
-
                 con.Close();
 
                 lblMessage.Text = "Theme added successfully";
