@@ -167,6 +167,7 @@ Inherits="WebProjectNew.ManageAvailability" %>
                     runat="server"
                     Text="Add Slot"
                     PostBackUrl="~/AddSlot.aspx"
+                    causesValidation="false"
                     Width="120px"
                     Height="40px" />
 
