@@ -49,10 +49,12 @@
             font-size: 14px;
             box-sizing: border-box;
             outline: none;
+            transition: 0.3s;
         }
 
         .input-style:focus {
             border-color: #70677A;
+            background-color: #ffffff;
         }
 
         .selected-theme-info {
@@ -97,17 +99,18 @@
 
             <div class="form-group">
                 <label>Available Dates</label>
-                <asp:DropDownList ID="ddlDate" runat="server" CssClass="input-style" AutoPostBack="true" OnSelectedIndexChanged="ddlDate_SelectedIndexChanged">
+                <%-- التواريخ ستُحمل برمجياً من الداتابيس في Page_Load --%>
+                <asp:DropDownList ID="ddlDate" runat="server" CssClass="input-style" 
+                    AutoPostBack="True" OnSelectedIndexChanged="ddlDate_SelectedIndexChanged" DataSourceID="SqlDataSource1" DataTextField="AvailableDate" DataValueField="AvailableDate">
                     <asp:ListItem Text=" Select Date " Value="0"></asp:ListItem>
-                    <asp:ListItem Text="Monday, May 4, 2026" Value="2026-05-04"></asp:ListItem>
-                    <asp:ListItem Text="Tuesday, May 5, 2026" Value="2026-05-05"></asp:ListItem>
-                    <asp:ListItem Text="Wednesday, May 6, 2026" Value="2026-05-06"></asp:ListItem>
                 </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Availability]"></asp:SqlDataSource>
             </div>
 
             <div class="form-group">
                 <label>Available Times</label>
-                <asp:DropDownList ID="ddlTime" runat="server" CssClass="input-style">
+                <%-- الأوقات ستُحمل برمجياً بناءً على التاريخ المختار --%>
+                <asp:DropDownList ID="ddlTime" runat="server" CssClass="input-style" DataSourceID="SqlDataSource1" DataTextField="AvailableTime" DataValueField="AvailableTime">
                     <asp:ListItem Text=" Select Time " Value="0"></asp:ListItem>
                 </asp:DropDownList>
             </div>
