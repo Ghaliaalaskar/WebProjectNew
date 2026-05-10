@@ -73,7 +73,7 @@
                 Your booking has been<br /> successfully scheduled.
             </p>
 
-            <asp:Button ID="btnGoDetails" runat="server" Text="Go to Booking Details" CssClass="btn-details" OnClick="btnGoDetails_Click" />
+            <asp:Button ID="btnGoDetails" runat="server" Text="Go to  My Booking  History" CssClass="btn-details" OnClick="btnGoDetails_Click" />
         </div>
     </div>
 </asp:Content>

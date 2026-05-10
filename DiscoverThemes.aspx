@@ -37,6 +37,7 @@
             box-sizing: border-box;
             cursor: pointer;
             transition: 0.3s;
+            line-height: 20px;
         }
         .btn-details:hover { background-color: #b0b0b0; }
 
@@ -62,13 +63,17 @@
             <asp:Repeater ID="rptThemes" runat="server">
                 <ItemTemplate>
                     <div class="theme-card">
-                        <img src='<%# "images/" + Eval("theme_image") %>' alt='<%# Eval("theme_name") %>' />
+                        <%-- جلب الصورة من الداتابيس --%>
+                        <img src='<%# "images/" + Eval("ServicePhoto") %>' alt='<%# Eval("ServicePhoto") %>' />
                         <div class="theme-info">
-                            <span class="theme-label"><%# Eval("theme_name") %></span>
+                            <%-- جلب اسم الثيم --%>
+                            <span class="theme-label"><%# Eval("ServiceName") %></span>
                             
+                            <%-- زر التفاصيل ينقل للصفحة المحددة في الداتابيس --%>
                             <asp:HyperLink ID="lnkDetails" runat="server" CssClass="btn-details" 
-                                NavigateUrl='<%# Eval("details_page_url") %>'>Theme Details</asp:HyperLink>
+                                NavigateUrl='<%# Eval("details_guest_page_url") %>'>Theme Details</asp:HyperLink>
                             
+                            <%-- زر الحجز يوجه للـ Login لأن هذا Guest --%>
                             <asp:Button ID="btnBook" runat="server" Text="Book Theme" CssClass="btn-book" 
                                 OnClick="RedirectToLogin" />
                         </div>

@@ -99,18 +99,21 @@
 
             <div class="form-group">
                 <label>Available Dates</label>
-                <%-- التواريخ ستُحمل برمجياً من الداتابيس في Page_Load --%>
+                <%-- التواريخ تُحمل من الداتابيس مع فلترة المحجوز منها --%>
                 <asp:DropDownList ID="ddlDate" runat="server" CssClass="input-style" 
-                    AutoPostBack="True" OnSelectedIndexChanged="ddlDate_SelectedIndexChanged" DataSourceID="SqlDataSource1" DataTextField="AvailableDate" DataValueField="AvailableDate">
+                    AutoPostBack="True" OnSelectedIndexChanged="ddlDate_SelectedIndexChanged" 
+                    DataSourceID="SqlDataSource1" DataTextField="AvailableDate" DataValueField="AvailableDate">
                     <asp:ListItem Text=" Select Date " Value="0"></asp:ListItem>
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Availability]"></asp:SqlDataSource>
+                
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                    SelectCommand="SELECT * FROM [Availability] WHERE NOT EXISTS (SELECT 1 FROM [Appointments] WHERE [Appointments].AppointmentDate = [Availability].AvailableDate AND [Appointments].AppointmentTime = [Availability].AvailableTime)">
+                </asp:SqlDataSource>
             </div>
-
             <div class="form-group">
                 <label>Available Times</label>
-                <%-- الأوقات ستُحمل برمجياً بناءً على التاريخ المختار --%>
-                <asp:DropDownList ID="ddlTime" runat="server" CssClass="input-style" DataSourceID="SqlDataSource1" DataTextField="AvailableTime" DataValueField="AvailableTime">
+                <asp:DropDownList ID="ddlTime" runat="server" CssClass="input-style" 
+                    DataSourceID="SqlDataSource1" DataTextField="AvailableTime" DataValueField="AvailableTime">
                     <asp:ListItem Text=" Select Time " Value="0"></asp:ListItem>
                 </asp:DropDownList>
             </div>
