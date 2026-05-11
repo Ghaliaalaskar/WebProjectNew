@@ -22,7 +22,6 @@ Inherits="WebProjectNew.ManageAvailability" %>
         border-collapse:collapse;
         text-align:center;">
 
-        <!-- Header -->
         <tr style="background:white;
             height:60px;
             font-size:18px;
@@ -84,7 +83,6 @@ Inherits="WebProjectNew.ManageAvailability" %>
 
             </td>
 
-            <!-- Time -->
             <td>
 
                 <asp:TextBox ID="txtTime"
@@ -106,7 +104,6 @@ Inherits="WebProjectNew.ManageAvailability" %>
 
             </td>
 
-            <!-- Status -->
             <td>
 
                 <asp:DropDownList ID="ddlStatus"
@@ -133,14 +130,15 @@ Inherits="WebProjectNew.ManageAvailability" %>
 
             </td>
 
-            <!-- Buttons -->
             <td>
 
                 <asp:Button ID="btnEdit"
-                    runat="server"
-                    Text="Edit"
-                    Width="70px"
-                    Height="35px" />
+                runat="server"
+                Text="Edit"
+                 Width="70px"
+                 Height="35px"
+                 PostBackUrl="~/editavailability.aspx" 
+                CausesValidation="false" />
 
                 &nbsp;
 
@@ -156,7 +154,6 @@ Inherits="WebProjectNew.ManageAvailability" %>
 
         </tr>
 
-        <!-- Add Slot -->
         <tr style="height:70px;background:white;">
 
             <td colspan="5"

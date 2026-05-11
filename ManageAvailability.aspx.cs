@@ -66,5 +66,10 @@ namespace WebProjectNew
                 lblMessage.ForeColor = System.Drawing.Color.Red;
             }
         }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

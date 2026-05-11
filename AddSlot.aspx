@@ -1,215 +1,85 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.Master"
-AutoEventWireup="true"
-CodeBehind="AddSlot.aspx.cs"
-Inherits="WebProjectNew.AddSlot" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.Master" AutoEventWireup="true" CodeBehind="AddSlot.aspx.cs" Inherits="WebProjectNew.AddSlot" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div style="width:1000px; margin:auto; background:white; padding:20px;">
 
-<div style="width:1000px;
-    margin:auto;
-    background:white;
-    padding:20px;">
-
-    <!-- Title -->
-    <div style="background:#5e5a6e;
-        color:white;
-        font-size:38px;
-        font-family:Georgia;
-        padding:15px;">
-        Add Slot
-    </div>
-
-    <!-- Form -->
-    <div style="width:700px;
-        margin:30px auto;
-        border:1px solid #cfcfcf;">
-
-        <div style="background:#f5f5f5;
-            padding:20px;
-            font-size:20px;
-            font-family:Georgia;">
-            Add slot:
+        <div style="background:#5e5a6e; color:white; font-size:38px; font-family:Georgia; padding:15px;">
+            Add Slot
         </div>
 
-        <div style="background:#5e5a6e;
-            padding:35px;">
+        <div style="width:700px; margin:30px auto; border:1px solid #cfcfcf;">
 
-            <table style="width:100%;">
+            <div style="background:#f5f5f5; padding:20px; font-size:20px; font-family:Georgia;">
+                Add new slot details:
+            </div>
 
-                <!-- Theme -->
-                <tr>
+            <div style="background:#5e5a6e; padding:35px;">
 
-                    <td style="padding:15px;
-                        color:white;
-                        font-size:18px;
-                        font-weight:bold;">
-                        Theme Name:
-                    </td>
+                <table style="width:100%;">
 
-                    <td>
+                    <tr>
+                        <td style="padding:15px; color:white; font-size:18px; font-weight:bold;">Theme Name:</td>
+                        <td>
+                            <asp:DropDownList ID="ddlTheme" runat="server" Width="400px" Height="35px" Font-Size="16px">
+                                <asp:ListItem Text="Select Theme:" Value=""></asp:ListItem>
+                                <asp:ListItem Value="1">Baby Shower</asp:ListItem>
+                                <asp:ListItem Value="2">Bridal Shower</asp:ListItem>
+                                <asp:ListItem Value="3">Graduation</asp:ListItem>
+                            </asp:DropDownList>
+                            <br />
+                            <asp:RequiredFieldValidator ID="rfvTheme" runat="server" ControlToValidate="ddlTheme" 
+                                InitialValue="" ErrorMessage="Please select a theme" ForeColor="Red">
+                            </asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
 
-                        <asp:DropDownList ID="ddlTheme"
-                            runat="server"
-                            Width="400px"
-                            Height="35px"
-                            Font-Size="16px">
+                    <tr>
+                        <td style="padding:15px; color:white; font-size:18px; font-weight:bold;">Date:</td>
+                        <td>
+                            <asp:TextBox ID="txtDate" runat="server" TextMode="Date" Width="400px" Height="35px" Font-Size="16px"></asp:TextBox>
+                            <br />
+                            <asp:RequiredFieldValidator ID="rfvDate" runat="server" ControlToValidate="txtDate" 
+                                ErrorMessage="Date is required" ForeColor="Red">
+                            </asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
 
-                            <asp:ListItem Text="Select Theme:" Value=""></asp:ListItem>
-                            <asp:ListItem>Baby Shower</asp:ListItem>
-                            <asp:ListItem>Bridal Shower</asp:ListItem>
-                            <asp:ListItem>Graduation</asp:ListItem>
+                    <tr>
+                        <td style="padding:15px; color:white; font-size:18px; font-weight:bold;">Time:</td>
+                        <td>
+                            <asp:TextBox ID="TextBox1" runat="server" TextMode="Time" Width="400px" Height="35px" Font-Size="16px"></asp:TextBox>
+                            <br />
+                            <asp:RequiredFieldValidator ID="rfvTime" runat="server" ControlToValidate="TextBox1" 
+                                ErrorMessage="Time is required" ForeColor="Red">
+                            </asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
 
-                        </asp:DropDownList>
+                    <tr>
+                        <td style="padding:15px; color:white; font-size:18px; font-weight:bold;">Status:</td>
+                        <td>
+                            <asp:DropDownList ID="ddlStatus" runat="server" Width="400px" Height="35px" Font-Size="16px">
+                                <asp:ListItem>Available</asp:ListItem>
+                                <asp:ListItem>Booked</asp:ListItem>
+                            </asp:DropDownList>
+                        </td>
+                    </tr>
 
-                        <br />
+                    <tr>
+                        <td></td>
+                        <td style="padding-top:30px;">
+                            <asp:Button ID="btnCancel" runat="server" Text="Cancel" PostBackUrl="~/ManageAvailability.aspx" 
+                                Width="100px" Height="40px" CausesValidation="false" />
+                            &nbsp;&nbsp;&nbsp;
+                            <asp:Button ID="btnAdd" runat="server" Text="Add Slot" OnClick="btnAdd_Click" 
+                                CausesValidation="true" Width="100px" Height="40px" />
+                        </td>
+                    </tr>
 
-                        <asp:RequiredFieldValidator
-                            ID="rfvTheme"
-                            runat="server"
-                            ControlToValidate="ddlTheme"
-                            InitialValue=""
-                            ErrorMessage="Required"
-                            ForeColor="Red">
-                        </asp:RequiredFieldValidator>
-
-                    </td>
-
-                </tr>
-
-                <!-- Date -->
-                <tr>
-
-                    <td style="padding:15px;
-                        color:white;
-                        font-size:18px;
-                        font-weight:bold;">
-                        Date:
-                    </td>
-
-                    <td>
-
-                        <asp:TextBox ID="txtDate"
-                            runat="server"
-                            TextMode="Date"
-                            Width="400px"
-                            Height="35px"
-                            Font-Size="16px">
-                        </asp:TextBox>
-
-                        <br />
-
-                        <asp:RequiredFieldValidator
-                            ID="rfvDate"
-                            runat="server"
-                            ControlToValidate="txtDate"
-                            ErrorMessage="Required"
-                            ForeColor="Red">
-                        </asp:RequiredFieldValidator>
-
-                    </td>
-
-                </tr>
-
-                <!-- Time -->
-                <tr>
-
-                    <td style="padding:15px;
-                        color:white;
-                        font-size:18px;
-                        font-weight:bold;">
-                        Time:
-                    </td>
-
-                    <td>
-
-                        <asp:TextBox ID="TextBox1" runat="server" TextMode="Time" Width="400px"></asp:TextBox>
-
-                        <br />
-
-                        <asp:RequiredFieldValidator
-                            ID="rfvTime"
-                            runat="server"
-                            ControlToValidate="TextBox1"
-                            InitialValue=""
-                            ErrorMessage="Required"
-                            ForeColor="Red"></asp:RequiredFieldValidator>
-
-                    </td>
-
-                </tr>
-
-                <!-- Status -->
-                <tr>
-
-                    <td style="padding:15px;
-                        color:white;
-                        font-size:18px;
-                        font-weight:bold;">
-                        Status:
-                    </td>
-
-                    <td>
-
-                        <asp:DropDownList ID="ddlStatus"
-                            runat="server"
-                            Width="400px"
-                            Height="35px"
-                            Font-Size="16px">
-
-                            <asp:ListItem>Available</asp:ListItem>
-                            <asp:ListItem>Booked</asp:ListItem>
-
-                        </asp:DropDownList>
-
-                        <asp:RequiredFieldValidator
-                            ID="rfvTime0"
-                            runat="server"
-                            ControlToValidate="Textbox1"
-                            InitialValue=""
-                            ErrorMessage="Required"
-                            ForeColor="Red">
-                        </asp:RequiredFieldValidator>
-
-                    </td>
-
-                </tr>
-
-                <!-- Buttons -->
-                <tr>
-
-                    <td></td>
-
-                    <td style="padding-top:30px;">
-
-                        <asp:Button ID="btnCancel"
-                            runat="server"
-                            Text="Cancel"
-                            PostBackUrl="~/ManageAvailability.aspx"
-                            Width="100px"
-                            Height="40px"
-                            CausesValidation="false" />
-
-                        &nbsp;&nbsp;&nbsp;
-
-                        <asp:Button ID="btnAdd" runat="server" Text="Add Slot" 
-                            OnClick="btnAdd_Click" 
-                            CausesValidation="false"
-                            Width="100px"
-                            Height="40px" />
-
-                    </td>
-
-                </tr>
-
-            </table>
-
+                </table>
+            </div>
         </div>
-
     </div>
-
-</div>
-
 </asp:Content>

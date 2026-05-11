@@ -12,12 +12,12 @@ namespace WebProjectNew
 {
     public partial class AddSlot : System.Web.UI.Page
     {
-        // استخدام اسم نص الاتصال الصحيح من الـ Web.config
+        // جلب نص الاتصال من ملف Web.config
         string cs = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // تصحيح الحماية: التحقق من السيشن بشكل آمن لمنع الخطأ عند أول تشغيل
+            // التحقق من تسجيل الدخول
             if (Session["UserID"] == null)
             {
                 Response.Redirect("login.aspx");
@@ -26,49 +26,48 @@ namespace WebProjectNew
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            // إزالة Page.IsValid مؤقتاً للتأكد من أن الـ Validators لا تمنع الكود من العمل
-            try
+            if (Page.IsValid)
             {
-                using (SqlConnection con = new SqlConnection(cs))
+                try
                 {
-                    // استعلام الإضافة المعتمد على أسماء الأعمدة في صورتك
-                    string query = "INSERT INTO Availability (ServiceID, AvailableDate, AvailableTime) VALUES (@ServiceID, @AvailableDate, @AvailableTime)";
-
-                    SqlCommand cmd = new SqlCommand(query, con);
-
-                    // 1. معالجة ServiceID: نستخدم SelectedIndex + 1 إذا كانت القائمة تعرض الأسماء فقط
-                    // أو SelectedValue إذا كنت قد ربطتها بـ IDs من قاعدة البيانات
-                    int serviceID = 0;
-                    if (ddlTheme.SelectedIndex >= 0)
+                    using (SqlConnection con = new SqlConnection(cs))
                     {
-                        serviceID = ddlTheme.SelectedIndex + 1;
-                    }
+                        // التعديل هنا: الإضافة لجدول Availability
+                        // الأعمدة: ServiceID, AvailableDate, AvailableTime
+                        string query = "INSERT INTO Availability (ServiceID, AvailableDate, AvailableTime) " +
+                                       "VALUES (@ServiceID, @AvailableDate, @AvailableTime)";
 
-                    cmd.Parameters.AddWithValue("@ServiceID", serviceID);
+                        SqlCommand cmd = new SqlCommand(query, con);
 
-                    // 2. معالجة التاريخ من txtDate
-                    cmd.Parameters.AddWithValue("@AvailableDate", txtDate.Text.Trim());
+                        // 1. ServiceID: نأخذ القيمة الرقمية من القائمة المنسدلة
+                        cmd.Parameters.AddWithValue("@ServiceID", ddlTheme.SelectedValue);
 
-                    // 3. معالجة الوقت من TextBox1 كما طلبتِ
-                    cmd.Parameters.AddWithValue("@AvailableTime", TextBox1.Text.Trim());
+                        // 2. AvailableDate: التاريخ من txtDate
+                        cmd.Parameters.AddWithValue("@AvailableDate", txtDate.Text.Trim());
 
-                    con.Open();
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    con.Close();
+                        // 3. AvailableTime: الوقت من TextBox1
+                        cmd.Parameters.AddWithValue("@AvailableTime", TextBox1.Text.Trim());
 
-                    if (rowsAffected > 0)
-                    {
-                        // استخدام ScriptManager لإظهار رسالة النجاح
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Slot added successfully!');", true);
-                        ClearFields();
+                        con.Open();
+                        int rows = cmd.ExecuteNonQuery();
+                        con.Close();
+
+                        if (rows > 0)
+                        {
+                            // رسالة نجاح
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Slot added to Availability successfully!');", true);
+
+                            // تنظيف الخانات
+                            ClearFields();
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                // عرض الخطأ الحقيقي لمعرفة المشكلة (سواء كانت في نوع البيانات أو الاتصال)
-                string errorMessage = ex.Message.Replace("'", "\\'").Replace("\r", "").Replace("\n", "");
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "alert('Error: " + errorMessage + "');", true);
+                catch (Exception ex)
+                {
+                    // عرض الخطأ في حال حدوث مشكلة
+                    string cleanError = ex.Message.Replace("'", "\\'").Replace("\r", "").Replace("\n", "");
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "alert('Database Error: " + cleanError + "');", true);
+                }
             }
         }
 

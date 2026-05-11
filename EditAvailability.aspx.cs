@@ -12,61 +12,35 @@ namespace WebProjectNew
 {
     public partial class EditAvailability : System.Web.UI.Page
     {
-        // استخدام نص الاتصال الموحد كما في ملف Web.config
         string cs = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // 1. حماية الصفحة بالسيشن
             if (Session["UserID"] == null)
             {
                 Response.Redirect("login.aspx");
             }
-
-            // 2. عند تحميل الصفحة لأول مرة، يفضل جلب رقم الموعد من الرابط (URL)
-            if (!IsPostBack)
-            {
-                // إذا كنت ترسل الـ ID في الرابط مثل: EditAvailability.aspx?ID=5
-                if (Request.QueryString["ID"] != null)
-                {
-                    // هنا يمكنك إضافة كود لجلب بيانات الموعد وعرضها في الخانات
-                }
-            }
         }
+
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            // التأكد من صحة البيانات (Validators)
             if (Page.IsValid)
             {
                 try
                 {
                     using (SqlConnection con = new SqlConnection(cs))
                     {
-                        // استعلام التحديث: نعدل التاريخ والوقت بناءً على الـ ID الفريد للموعد
-                        // ملاحظة: استخدمت AvailabilityID لأنه الضامن الوحيد لعدم تعديل مواعيد أخرى بالخطأ
-                        string query = "UPDATE Availability SET AvailableDate=@AvailableDate, AvailableTime=@AvailableTime WHERE AvailabilityID=@AvailabilityID";
+                        // تعديل الاستعلام ليستخدم أسماء الأعمدة الصحيحة في جدول Availability
+                        // الأعمدة الصحيحة هي: ServiceID, AvailableDate, AvailableTime
+                        // ملاحظة: قمت بإزالة UserID لأنه غير موجود في هذا الجدول
+                        string query = "UPDATE Availability SET ServiceID=@SID, AvailableDate=@Date, AvailableTime=@Time WHERE AvailableDate=@Date AND AvailableTime=@Time";
 
                         SqlCommand cmd = new SqlCommand(query, con);
 
-                        // ربط القيم من الأدوات (TextBox و DropDownList)
-                        cmd.Parameters.AddWithValue("@AvailableDate", txtDate.Text.Trim());
-                        cmd.Parameters.AddWithValue("@AvailableTime", ddlTime.SelectedValue);
-
-                        // نأخذ الـ ID من الرابط (QueryString) أو من حقل مخفي (HiddenField)
-                        // سأفترض أنك ترسله في الرابط (URL)
-                        string idFromUrl = Request.QueryString["ID"];
-                        if (!string.IsNullOrEmpty(idFromUrl))
-                        {
-                            cmd.Parameters.AddWithValue("@AvailabilityID", idFromUrl);
-                        }
-                        else
-                        {
-                            // إذا لم يوجد ID، نستخدم الـ ServiceID كخيار بديل (لكنه سيعدل كل مواعيد الثيم)
-                            // والأفضل دائماً التعديل بالـ AvailabilityID
-                            lblMessage.Text = "Error: Appointment ID is missing!";
-                            lblMessage.ForeColor = System.Drawing.Color.Red;
-                            return;
-                        }
+                        // ربط الباراميترز بالقيم من الواجهة
+                        cmd.Parameters.AddWithValue("@SID", ddlTheme.SelectedValue);
+                        cmd.Parameters.AddWithValue("@Date", txtDate.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Time", TextBox1.Text.Trim());
 
                         con.Open();
                         int rowsAffected = cmd.ExecuteNonQuery();
@@ -74,30 +48,24 @@ namespace WebProjectNew
 
                         if (rowsAffected > 0)
                         {
-                            // رسالة نجاح باللون الأخضر والبقاء في الصفحة
-                            lblMessage.Text = "Availability updated successfully!";
-                            lblMessage.ForeColor = System.Drawing.Color.Green;
+                            lblMessage.Text = "Updated successfully!";
+                            lblMessage.ForeColor = System.Drawing.Color.LimeGreen;
                         }
                         else
                         {
-                            lblMessage.Text = "Update failed: Record not found.";
-                            lblMessage.ForeColor = System.Drawing.Color.Red;
+                            // إذا لم يتم التحديث، قد يكون بسبب أن التاريخ والوقت لم يتطابقا مع أي سجل
+                            lblMessage.Text = "Update failed: No matching record found.";
+                            lblMessage.ForeColor = System.Drawing.Color.Yellow;
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    // عرض الخطأ التقني في حال حدوثه
+                    // تنظيف وعرض رسالة الخطأ
                     lblMessage.Text = "Database Error: " + ex.Message;
                     lblMessage.ForeColor = System.Drawing.Color.Red;
                 }
             }
-        }
-
-        // زر للإلغاء والعودة لصفحة الإدارة
-        protected void btnCancel_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ManageAvailability.aspx");
         }
     }
 }
