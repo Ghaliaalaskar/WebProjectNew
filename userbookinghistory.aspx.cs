@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data; 
-using System.Data.SqlClient; 
+using System.Data;
+using System.Data.SqlClient;
 
 namespace WebProjectNew
 {
@@ -17,7 +17,6 @@ namespace WebProjectNew
         {
             if (!IsPostBack)
             {
-                
                 if (Session["UserID"] != null)
                 {
                     LoadHistory();
@@ -29,13 +28,12 @@ namespace WebProjectNew
             }
         }
 
-      
         private void LoadHistory()
         {
             using (SqlConnection con = new SqlConnection(connStr))
             {
-                
-                string query = @"SELECT S.ServiceName, A.AppointmentDate, A.AppointmentTime 
+                // تم إضافة A.AppointmentID هنا في الاستعلام
+                string query = @"SELECT A.AppointmentID, S.ServiceName, A.AppointmentDate, A.AppointmentTime 
                                  FROM Appointments A 
                                  INNER JOIN Services S ON A.ServiceID = S.ServiceID 
                                  WHERE A.UserID = @UID 
@@ -53,13 +51,9 @@ namespace WebProjectNew
             }
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        protected void GridViewHistory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        // الأكواد المتبقية تبقى كما هي دون تغيير
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e) { }
+        protected void GridViewHistory_SelectedIndexChanged(object sender, EventArgs e) { }
+        protected void Button1_Click(object sender, EventArgs e) { }
     }
 }

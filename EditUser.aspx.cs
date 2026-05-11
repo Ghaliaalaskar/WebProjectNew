@@ -1,41 +1,68 @@
 ﻿using System;
-using System.Configuration;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
 using System.Data.SqlClient;
-using System.Xml.Linq;
+using System.Configuration;
 
 namespace WebProjectNew
 {
     public partial class EditUser : System.Web.UI.Page
     {
+        string cs = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserID"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
 
+            if (!IsPostBack)
+            {
+            }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            string cs = ConfigurationManager.ConnectionStrings["PartyPlannerDB"].ConnectionString;
+            try
+            {
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    string query = "UPDATE [User] SET Name=@Name, Phone=@Phone WHERE Email=@Email";
 
-            SqlConnection con = new SqlConnection(cs);
+                    SqlCommand cmd = new SqlCommand(query, con);
 
-            string query = "UPDATE Users SET Name=@Name, Phone=@Phone WHERE Email=@Email";
+                    cmd.Parameters.AddWithValue("@Name", txtName.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Phone", txtPhone.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
 
-            SqlCommand cmd = new SqlCommand(query, con);
+                    con.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    con.Close();
 
-            cmd.Parameters.AddWithValue("@Name", txtName.Text);
-            cmd.Parameters.AddWithValue("@Phone", txtPhone.Text);
-            cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-
-            con.Open();
-
-            cmd.ExecuteNonQuery();
-
-            con.Close();
-
-            lblMessage.Text = "User updated successfully";
+                    if (rowsAffected > 0)
+                    {
+                        Response.Write("<script>alert('Saved successfully!');</script>");
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Update failed: User not found.');</script>");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error: " + ex.Message + "');</script>");
+            }
         }
 
-     
-     
+        protected void btnCancel_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("MangeUsers.aspx");
         }
     }
+}

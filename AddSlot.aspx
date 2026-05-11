@@ -125,30 +125,17 @@ Inherits="WebProjectNew.AddSlot" %>
 
                     <td>
 
-                        <asp:DropDownList ID="ddlTime"
-                            runat="server"
-                            Width="400px"
-                            Height="35px"
-                            Font-Size="16px">
-
-                            <asp:ListItem Text="Select Time:" Value=""></asp:ListItem>
-                            <asp:ListItem>4:00 PM</asp:ListItem>
-                            <asp:ListItem>5:00 PM</asp:ListItem>
-                            <asp:ListItem>6:00 PM</asp:ListItem>
-                            <asp:ListItem>7:00 PM</asp:ListItem>
-
-                        </asp:DropDownList>
+                        <asp:TextBox ID="TextBox1" runat="server" TextMode="Time" Width="400px"></asp:TextBox>
 
                         <br />
 
                         <asp:RequiredFieldValidator
                             ID="rfvTime"
                             runat="server"
-                            ControlToValidate="ddlTime"
+                            ControlToValidate="TextBox1"
                             InitialValue=""
                             ErrorMessage="Required"
-                            ForeColor="Red">
-                        </asp:RequiredFieldValidator>
+                            ForeColor="Red"></asp:RequiredFieldValidator>
 
                     </td>
 
@@ -180,7 +167,7 @@ Inherits="WebProjectNew.AddSlot" %>
                         <asp:RequiredFieldValidator
                             ID="rfvTime0"
                             runat="server"
-                            ControlToValidate="ddlTime"
+                            ControlToValidate="Textbox1"
                             InitialValue=""
                             ErrorMessage="Required"
                             ForeColor="Red">
@@ -207,9 +194,9 @@ Inherits="WebProjectNew.AddSlot" %>
 
                         &nbsp;&nbsp;&nbsp;
 
-                        <asp:Button ID="btnAdd"
-                            runat="server"
-                            Text="+Add"
+                        <asp:Button ID="btnAdd" runat="server" Text="Add Slot" 
+                            OnClick="btnAdd_Click" 
+                            CausesValidation="false"
                             Width="100px"
                             Height="40px" />
 

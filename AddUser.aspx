@@ -137,7 +137,6 @@ Display="Dynamic">
 
 </div>
 
-<!-- PHONE -->
 
 <div style="margin-bottom:25px;">
 
@@ -184,7 +183,7 @@ Display="Dynamic">
 
 </div>
 
-&nbsp;<!-- BUTTONS --><div style="
+&nbsp;<div style="
 margin-top:35px;
 display:flex;
 justify-content:center;
@@ -228,7 +227,6 @@ OnClick="btnSave_Click" />
 
 <br />
 
-<!-- SUCCESS MESSAGE -->
 
 <div style="text-align:center;">
 

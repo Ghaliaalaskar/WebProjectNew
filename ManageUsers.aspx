@@ -1,255 +1,208 @@
-﻿<%@ Page Title="Manage Users"
-Language="C#"
-MasterPageFile="~/AdminMaster.Master"
-AutoEventWireup="true" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.Master"
 
-<asp:Content ID="Content1"
-ContentPlaceHolderID="ContentPlaceHolder1"
-runat="server">
+AutoEventWireup="true"
 
-<div style="
-width:980px;
-margin-left:15px;
-margin-top:35px;
-font-family:Georgia;
-">
+CodeBehind="ManageUsers.aspx.cs"
 
-<!-- TITLE -->
+Inherits="WebProjectNew.ManageUsers" %>
 
-<div style="
-width:851px;
-height:62px;
-background-color:#70677A;
-color:white;
-font-size:42px;
-line-height:62px;
-padding-left:28px;
-">
-Manage users
-</div>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-<!-- TABLE -->
+</asp:Content>
 
-<table style="
-width:880px;
-border-collapse:collapse;
-background-color:#70677A;
-color:white;
-font-size:18px;
-text-align:center;
-font-family:Georgia;
-">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<!-- HEADER -->
+<div style="width:1000px;margin:auto;background:white;padding:20px;">
 
-<tr style="
-background-color:#d5cedc;
-color:black;
-height:68px;
-font-size:21px;
-">
+    <div style="background:#5e5a6e;color:white;font-size:38px;font-family:Georgia;padding:15px;">
 
-<th>User ID</th>
-<th>Name</th>
-<th>Email</th>
-<th>Phone</th>
-<th>Role</th>
-<th>Actions</th>
+        Manage users
 
-</tr>
+    </div>
 
-<!-- INPUT ROW -->
+    <table style="width:100%;border-collapse:collapse;text-align:center;font-family:Georgia;">
 
-<tr>
+        <tr style="background:white;height:60px;font-size:20px;font-weight:bold;">
 
-<!-- USER ID -->
+            <td>User ID</td>
 
-<td class="auto-style17">
+            <td>Name</td>
 
-<asp:TextBox ID="txtID"
-runat="server"
-Width="80px"
-Height="30px">
-</asp:TextBox>
+            <td>Email</td>
 
-<br />
+            <td>Phone</td>
 
-<asp:RequiredFieldValidator
-ID="rfvID"
-runat="server"
-ControlToValidate="txtID"
-ErrorMessage="Required"
-ForeColor="Red">
-</asp:RequiredFieldValidator>
+            <td>Actions</td>
 
-</td>
+        </tr>
 
-<!-- NAME -->
+        <tr style="background:#5e5a6e;height:100px;color:white;">
 
-<td class="auto-style17">
+            <td>
 
-<asp:TextBox ID="txtName"
-runat="server"
-Width="120px"
-Height="30px">
-</asp:TextBox>
+                <asp:TextBox ID="txtUserID" runat="server" Width="100px" Height="30px"></asp:TextBox>
 
-<br />
+                <br />
 
-<asp:RequiredFieldValidator
-ID="rfvName"
-runat="server"
-ControlToValidate="txtName"
-ErrorMessage="Required"
-ForeColor="Red">
-</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvUserID" runat="server"
 
-</td>
+                    ControlToValidate="txtUserID"
 
-<!-- EMAIL -->
+                    ErrorMessage="Required"
 
-<td class="auto-style17">
+                    ForeColor="Red">
 
-<br />
+                </asp:RequiredFieldValidator>
 
-<asp:TextBox ID="txtEmail"
-runat="server"
-Width="150px"
-Height="30px">
-</asp:TextBox>
+            </td>
+            <td>
+
+                <asp:TextBox ID="txtName" runat="server" Width="150px" Height="30px"></asp:TextBox>
+
+                <br />
+
+                <asp:RequiredFieldValidator ID="rfvName" runat="server"
+
+                    ControlToValidate="txtName"
+
+                    ErrorMessage="Required"
+
+                    ForeColor="Red">
+
+                </asp:RequiredFieldValidator>
+
+            </td>
+
+            <td>
+
+                <asp:TextBox ID="txtEmail" runat="server" Width="180px" Height="30px"></asp:TextBox>
+
+                <br />
+
+                <asp:RequiredFieldValidator ID="rfvEmail" runat="server"
+
+                    ControlToValidate="txtEmail"
+
+                    ErrorMessage="Required"
+
+                    ForeColor="Red">
+
+                </asp:RequiredFieldValidator>
+
+                <br />
+
+                <asp:RegularExpressionValidator ID="revEmail" runat="server"
+
+                    ControlToValidate="txtEmail"
+
+                    ValidationExpression="\w+@\w+\.\w+"
+
+                    ErrorMessage="Invalid Email"
+
+                    ForeColor="Yellow">
+
+                </asp:RegularExpressionValidator>
+
+            </td>
+
+            <td>
+
+                <asp:TextBox ID="txtPhone" runat="server" Width="150px" Height="30px"></asp:TextBox>
+
+                <br />
+
+                <asp:RequiredFieldValidator ID="rfvPhone" runat="server"
+
+                    ControlToValidate="txtPhone"
+
+                    ErrorMessage="Required"
+
+                    ForeColor="Red">
+
+                </asp:RequiredFieldValidator>
+
+                <br />
+
+                <asp:RegularExpressionValidator ID="revPhone" runat="server"
+
+                    ControlToValidate="txtPhone"
+
+                    ValidationExpression="^\d+$"
+
+                    ErrorMessage="Invalid Phone Number"
+
+                    ForeColor="Yellow">
+
+                </asp:RegularExpressionValidator>
+
+            </td>
+
+            <td>
+
+                <asp:Button ID="btnEdit" runat="server"
+
+                    Text="Edit"
+
+                    Width="70px"
+
+                    Height="35px"
+
+                    CausesValidation="false"
+
+                    PostBackUrl="~/EditUser.aspx" />
+
+                &nbsp;
+
+                <asp:Button ID="btnDelete" runat="server"
+
+                    Text="Delete"
+
+                    Width="80px"
+
+                    Height="35px"
+
+                    OnClick="btnDelete_Click" />
+
+            </td>
+
+        </tr>
+
+    </table>
 
     <br />
 
-<asp:RequiredFieldValidator
-ID="rfvEmail"
-runat="server"
-ControlToValidate="txtEmail"
-ErrorMessage="Required"
-ForeColor="Red">
-</asp:RequiredFieldValidator>
+    <div style="text-align:right;">
 
-<br />
+        <asp:Button ID="btnAddUser" runat="server"
 
-<asp:RegularExpressionValidator
-ID="revEmail"
-runat="server"
-ControlToValidate="txtEmail"
-ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
-ErrorMessage="Invalid Email"
-ForeColor="Yellow">
-</asp:RegularExpressionValidator>
+            Text="Add User"
 
-</td>
+            Width="120px"
 
-<!-- PHONE -->
+            Height="40px"
 
-<td class="auto-style17">
+            CausesValidation="false"
 
-<br />
+            PostBackUrl="~/AddUser.aspx" />
 
-<asp:TextBox ID="txtPhone"
-runat="server"
-Width="120px"
-Height="30px">
-</asp:TextBox>
+    </div>
 
     <br />
 
-<asp:RequiredFieldValidator
-ID="rfvPhone"
-runat="server"
-ControlToValidate="txtPhone"
-ErrorMessage="Required"
-ForeColor="Red">
-</asp:RequiredFieldValidator>
+    <div style="text-align:center;">
 
-<br />
+        <asp:Label ID="lblMessage" runat="server"
 
-<asp:RegularExpressionValidator
-ID="revPhone"
-runat="server"
-ControlToValidate="txtPhone"
-ValidationExpression="^05\d{8}$"
-ErrorMessage="Invalid Phone Number"
-ForeColor="Yellow">
-</asp:RegularExpressionValidator>
+            ForeColor="LimeGreen"
 
-</td>
+            Font-Size="20px"
 
-<!-- ROLE -->
+            Font-Bold="true">
 
-<td class="auto-style17">
+        </asp:Label>
 
-<asp:DropDownList ID="ddlRole"
-runat="server"
-Width="110px"
-Height="35px">
-
-<asp:ListItem Text="Select"
-Value="">
-</asp:ListItem>
-
-<asp:ListItem Text="Admin"
-Value="Admin">
-</asp:ListItem>
-
-<asp:ListItem Text="Customer"
-Value="Customer">
-</asp:ListItem>
-
-</asp:DropDownList>
-
-<br />
-
-<asp:RequiredFieldValidator
-ID="rfvRole"
-runat="server"
-ControlToValidate="ddlRole"
-InitialValue=""
-ErrorMessage="Required"
-ForeColor="Red">
-</asp:RequiredFieldValidator>
-
-</td>
-
-<!-- BUTTON -->
-
-<td class="auto-style17">
-
-<asp:Button ID="btnAdd"
-runat="server"
-Text="Add new user"
-PostBackUrl="~/AddUser.aspx"
-CausesValidation="true"
-Width="120px"
-Height="38px"
-BackColor="White"
-ForeColor="Black" />
-
-</td>
-
-</tr>
-
-</table>
-
-<br />
-
-<asp:ValidationSummary
-ID="ValidationSummary1"
-runat="server"
-ForeColor="Red"
-HeaderText="Please fill all required fields" Height="121px"/>
+    </div>
 
 </div>
 
 </asp:Content>
-
-<asp:Content ID="Content2" runat="server" contentplaceholderid="head">
-    <style type="text/css">
-        .auto-style17 {
-            height: 158px;
-        }
-    </style>
-</asp:Content>
-
-

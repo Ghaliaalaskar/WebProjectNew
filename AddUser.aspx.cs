@@ -29,11 +29,10 @@ namespace WebProjectNew
                 using (SqlConnection con = new SqlConnection(connStr))
                 {
                     
-                    string query = "INSERT INTO [User] (Name, Email, Phone,) VALUES (@Name, @Email, @Phone,)";
+                    string query = "INSERT INTO [User] (Name, Email, Phone) VALUES (@Name, @Email, @Phone)";
 
                     SqlCommand cmd = new SqlCommand(query, con);
 
-                    // استخدام القيم من التكست بوكس مع تنظيف الفراغات
                     cmd.Parameters.AddWithValue("@Name", txtName.Text.Trim());
                     cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
                     cmd.Parameters.AddWithValue("@Phone", txtPhone.Text.Trim());

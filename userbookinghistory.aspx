@@ -18,7 +18,7 @@
     <table class="auto-style4">
         <tr>
             <td>
-                <h2 class="auto-style6"><strong>Booking History</strong></h2>
+                <h2 class="auto-style6"><strong>My Booking </strong></h2>
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -47,6 +47,8 @@
     </EmptyDataTemplate>
                     <HeaderStyle BackColor="#87779A" />
                 </asp:GridView>
+                <br />
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Cancel your booking" Width="300px" />
             </td>
             <td>&nbsp;</td>
         </tr>

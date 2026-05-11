@@ -13,9 +13,16 @@ namespace WebProjectNew
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Cache.SetNoStore();
 
-            if (Session["UserID"] == null || Session["Role"] == null || Session["Role"].ToString() != "1")
+            if (Session["UserID"] == null)
             {
                 Response.Redirect("login.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+                return;
+            }
+
+            if (Session["Role"] == null || Session["Role"].ToString() != "1")
+            {
+                Response.Redirect("ManageUsers.aspx", false);
                 Context.ApplicationInstance.CompleteRequest();
             }
         }

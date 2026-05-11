@@ -24,16 +24,14 @@ Inherits="WebProjectNew.EditUser" %>
 
         <div style="background:#5e5a6e;padding:35px;color:white;">
 
-            <!-- NAME -->
             <div style="margin-bottom:22px;">
-
                 <label style="display:inline-block;width:120px;">Name:</label>
 
                 <asp:TextBox ID="txtName" runat="server"
                     Width="300px"
                     Height="30px"
                     Font-Size="16px"
-                    Font-Names="Georgia" OnTextChanged="txtName_TextChanged">
+                    Font-Names="Georgia">
                 </asp:TextBox>
 
                 <br />
@@ -45,12 +43,9 @@ Inherits="WebProjectNew.EditUser" %>
                     ErrorMessage="Required"
                     ForeColor="Red">
                 </asp:RequiredFieldValidator>
-
             </div>
 
-            <!-- EMAIL -->
             <div style="margin-bottom:22px;">
-
                 <label style="display:inline-block;width:120px;">Email:</label>
 
                 <asp:TextBox ID="txtEmail" runat="server"
@@ -80,12 +75,9 @@ Inherits="WebProjectNew.EditUser" %>
                     ErrorMessage="Invalid Email"
                     ForeColor="Yellow">
                 </asp:RegularExpressionValidator>
-
             </div>
 
-            <!-- PHONE -->
             <div style="margin-bottom:22px;">
-
                 <label style="display:inline-block;width:120px;">Phone:</label>
 
                 <asp:TextBox ID="txtPhone" runat="server"
@@ -107,26 +99,24 @@ Inherits="WebProjectNew.EditUser" %>
 
                 <br />
 
-                <asp:RegularExpressionValidator
-                    ID="revPhone"
-                    runat="server"
-                    ControlToValidate="txtPhone"
-                    ValidationExpression="^\d+$"
-                    ErrorMessage="Numbers Only"
-                    ForeColor="Yellow">
-                </asp:RegularExpressionValidator>
-
+               <asp:RegularExpressionValidator 
+                 ID="revPhone" 
+                    runat="server" 
+                  ControlToValidate="txtPhone" 
+                     ValidationExpression="^[0-9]{10}$" 
+                     ErrorMessage="يرجى إدخال رقم هاتف صحيح (10 أرقام)." 
+                    ForeColor="Red">
+                    </asp:RegularExpressionValidator>
+                    
             </div>
 
-            <!-- BUTTONS -->
             <div style="text-align:right;">
-
                 <asp:Button ID="btnCancel" runat="server"
                     Text="Cancel"
                     Width="100px"
                     Height="40px"
                     CausesValidation="false"
-                    PostBackUrl="~/ManageUsers.aspx" />
+                    PostBackUrl="~/ManageUsers.aspx" OnClick="btnCancel_Click1" />
 
                 &nbsp;&nbsp;
 
@@ -135,19 +125,16 @@ Inherits="WebProjectNew.EditUser" %>
                     Width="100px"
                     Height="40px"
                     OnClick="btnSave_Click" />
-
             </div>
 
             <br />
 
             <div style="text-align:center;">
-
                 <asp:Label ID="lblMessage" runat="server"
                     ForeColor="LimeGreen"
                     Font-Size="18px"
                     Font-Bold="true">
                 </asp:Label>
-
             </div>
 
         </div>

@@ -10,7 +10,7 @@ namespace WebProjectNew
         {
             if (Page.IsValid)
             {
-                string cs = ConfigurationManager.ConnectionStrings["PartyPlannerDB"].ConnectionString;
+                string cs = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
                 SqlConnection con = new SqlConnection(cs);
 

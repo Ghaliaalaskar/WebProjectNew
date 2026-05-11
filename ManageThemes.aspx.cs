@@ -1,59 +1,66 @@
 ﻿using System;
-using System.Data.SqlClient;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace WebProjectNew
 {
     public partial class ManageThemes : System.Web.UI.Page
     {
-        string connStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True";
+        // استخدام نص الاتصال الموحد في Web.config
+        string cs = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Cache.SetCacheability(HttpCacheability.NoCache);
-            Response.Cache.SetNoStore();
-
-            if (Session["UserID"] == null ||Session["Role"].ToString() != "1")
+            // حماية الصفحة من الدخول غير المصرح به
+            if (Session["UserID"] == null)
             {
-                Response.Redirect("login.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
+                Response.Redirect("login.aspx");
             }
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtThemeName.Text))
+            try
             {
-                Response.Write("<script>alert('Please enter theme name');</script>");
-                return;
-            }
-
-            using (SqlConnection con = new SqlConnection(connStr))
-            {
-                string query = "DELETE FROM [Services] WHERE ServiceName=@ThemeName";
-
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@ThemeName", txtThemeName.Text.Trim());
-
-                try
+                using (SqlConnection con = new SqlConnection(cs))
                 {
-                    con.Open();
-                    int rows = cmd.ExecuteNonQuery();
+                    // استعلام الحذف
+                    string query = "DELETE FROM Services WHERE ServiceName=@ServiceName";
 
-                    if (rows > 0)
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@ServiceName", txtThemeName.Text.Trim());
+
+                    con.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    if (rowsAffected > 0)
                     {
-                        Response.Write("<script>alert('Theme deleted successfully');</script>");
+                        // تصفير الحقول بعد الحذف بنجاح
                         txtThemeName.Text = "";
+                        txtDuration.Text = "";
+                        txtPrice.Text = "";
+
+                        lblMessage.Text = "Theme deleted successfully";
+                        lblMessage.ForeColor = System.Drawing.Color.Green;
                     }
                     else
                     {
-                        Response.Write("<script>alert('Theme not found');</script>");
+                        lblMessage.Text = "Theme not found!";
+                        lblMessage.ForeColor = System.Drawing.Color.Red;
                     }
                 }
-                catch (Exception ex)
-                {
-                    Response.Write("<script>alert('Error: " + ex.Message + "');</script>");
-                }
+            }
+            catch (Exception ex)
+            {
+                lblMessage.Text = "Error: " + ex.Message;
+                lblMessage.ForeColor = System.Drawing.Color.Red;
             }
         }
     }
