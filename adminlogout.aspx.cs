@@ -11,7 +11,6 @@ namespace WebProjectNew
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // التحقق من أن المستخدم أدمن بالفعل قبل محاولة تسجيل الخروج
             if (Session["UserID"] == null)
             {
                 Response.Redirect("login.aspx");
@@ -20,13 +19,10 @@ namespace WebProjectNew
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            // مسح جميع القيم المخزنة في الجلسة (UserID, Role, etc.)
             Session.Clear();
 
-            // إنهاء الجلسة الحالية تماماً من الخادم
             Session.Abandon();
 
-            // توجيه الأدمن إلى صفحة تسجيل الدخول
             Response.Redirect("login.aspx");
         }
     }

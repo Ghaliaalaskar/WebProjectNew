@@ -35,12 +35,10 @@ Inherits="WebProjectNew.ManageAvailability" %>
 
         </tr>
 
-        <!-- Row -->
         <tr style="background:#5e5a6e;
             height:100px;
             color:white;">
 
-            <!-- Theme -->
             <td>
 
                 <asp:TextBox ID="txtThemeName"
@@ -61,7 +59,6 @@ Inherits="WebProjectNew.ManageAvailability" %>
 
             </td>
 
-            <!-- Date -->
             <td>
 
                 <asp:TextBox ID="txtDate"

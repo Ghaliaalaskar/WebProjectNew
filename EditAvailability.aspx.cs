@@ -30,9 +30,6 @@ namespace WebProjectNew
                 {
                     using (SqlConnection con = new SqlConnection(cs))
                     {
-                        // تعديل الاستعلام ليستخدم أسماء الأعمدة الصحيحة في جدول Availability
-                        // الأعمدة الصحيحة هي: ServiceID, AvailableDate, AvailableTime
-                        // ملاحظة: قمت بإزالة UserID لأنه غير موجود في هذا الجدول
                         string query = "UPDATE Availability SET ServiceID=@SID, AvailableDate=@Date, AvailableTime=@Time WHERE AvailableDate=@Date AND AvailableTime=@Time";
 
                         SqlCommand cmd = new SqlCommand(query, con);
@@ -53,7 +50,6 @@ namespace WebProjectNew
                         }
                         else
                         {
-                            // إذا لم يتم التحديث، قد يكون بسبب أن التاريخ والوقت لم يتطابقا مع أي سجل
                             lblMessage.Text = "Update failed: No matching record found.";
                             lblMessage.ForeColor = System.Drawing.Color.Yellow;
                         }
@@ -61,7 +57,6 @@ namespace WebProjectNew
                 }
                 catch (Exception ex)
                 {
-                    // تنظيف وعرض رسالة الخطأ
                     lblMessage.Text = "Database Error: " + ex.Message;
                     lblMessage.ForeColor = System.Drawing.Color.Red;
                 }

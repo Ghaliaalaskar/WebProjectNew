@@ -25,7 +25,6 @@
         </tr>
         <tr>
             <td style="text-align: center">
-                <%-- زر التأكيد باللون المختار --%>
                 <asp:Button ID="Button3" runat="server" 
                     BackColor="#726A7A" 
                     BorderColor="Black" 

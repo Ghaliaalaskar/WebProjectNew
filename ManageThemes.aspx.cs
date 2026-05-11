@@ -12,12 +12,10 @@ namespace WebProjectNew
 {
     public partial class ManageThemes : System.Web.UI.Page
     {
-        // استخدام نص الاتصال الموحد في Web.config
         string cs = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // حماية الصفحة من الدخول غير المصرح به
             if (Session["UserID"] == null)
             {
                 Response.Redirect("login.aspx");
@@ -30,7 +28,6 @@ namespace WebProjectNew
             {
                 using (SqlConnection con = new SqlConnection(cs))
                 {
-                    // استعلام الحذف
                     string query = "DELETE FROM Services WHERE ServiceName=@ServiceName";
 
                     SqlCommand cmd = new SqlCommand(query, con);
@@ -42,7 +39,6 @@ namespace WebProjectNew
 
                     if (rowsAffected > 0)
                     {
-                        // تصفير الحقول بعد الحذف بنجاح
                         txtThemeName.Text = "";
                         txtDuration.Text = "";
                         txtPrice.Text = "";

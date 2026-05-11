@@ -12,7 +12,6 @@ namespace WebProjectNew
 {
     public partial class DiscoverThemes : System.Web.UI.Page
     {
-        // نص الاتصال بقاعدة البيانات
         string connStr = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -27,7 +26,6 @@ namespace WebProjectNew
         {
             using (SqlConnection con = new SqlConnection(connStr))
             {
-                // جلب كل الثيمات من جدول Services لكي تظهر للزائر
                 string query = "SELECT * FROM Services";
                 SqlDataAdapter da = new SqlDataAdapter(query, con);
                 DataTable dt = new DataTable();
@@ -40,7 +38,6 @@ namespace WebProjectNew
                 }
                 catch (Exception ex)
                 {
-                    // في حال وجود خطأ يظهر تنبيه بسيط
                     Response.Write("<script>alert('Error loading themes');</script>");
                 }
             }
@@ -48,7 +45,6 @@ namespace WebProjectNew
 
         protected void RedirectToLogin(object sender, EventArgs e)
         {
-            // بما أن هذه صفحة الزوار، أي محاولة حجز ستوجههم لإنشاء حساب أو تسجيل دخول
             Response.Redirect("login.aspx");
         }
     }

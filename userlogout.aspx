@@ -16,11 +16,9 @@
         </tr>
         <tr>
             <td class="auto-style4">
-                <%-- زر العودة: يوجهك مباشرة لصفحة لوحة التحكم --%>
                 
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 
-                <%-- زر نعم: ينفذ كود تسجيل الخروج في ملف الـ CS --%>
                 <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Yes" BackColor="#87779A" BorderColor="Black" BorderStyle="Solid" BorderWidth="1px" ForeColor="White" Width="200px" Height="30px" />
             </td>
         </tr>

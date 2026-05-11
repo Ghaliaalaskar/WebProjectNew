@@ -32,7 +32,6 @@ namespace WebProjectNew
         {
             using (SqlConnection con = new SqlConnection(connStr))
             {
-                // تم إضافة A.AppointmentID هنا في الاستعلام
                 string query = @"SELECT A.AppointmentID, S.ServiceName, A.AppointmentDate, A.AppointmentTime 
                                  FROM Appointments A 
                                  INNER JOIN Services S ON A.ServiceID = S.ServiceID 
@@ -51,7 +50,6 @@ namespace WebProjectNew
             }
         }
 
-        // الأكواد المتبقية تبقى كما هي دون تغيير
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e) { }
         protected void GridViewHistory_SelectedIndexChanged(object sender, EventArgs e) { }
         protected void Button1_Click(object sender, EventArgs e) { Response.Redirect("usercancelbooking.aspx"); }

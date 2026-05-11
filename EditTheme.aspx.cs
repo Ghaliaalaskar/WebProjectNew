@@ -1,34 +1,28 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Web; // إضافة مكتبة الويب
+using System.Web; 
 
 namespace WebProjectNew
 {
     public partial class EditTheme : System.Web.UI.Page
     {
-        // ممر قاعدة البيانات الموحد الخاص بكِ
         string strCon = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True";
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // --- إضافة الـ Session هنا ---
-            // التحقق: إذا كان اليوزر غير مسجل دخول أو ليس أدمن (Role != 1) يرجعه للـ login
             if (Session["UserID"] == null || Session["Role"] == null || Session["Role"].ToString() != "1")
             {
                 Response.Redirect("login.aspx");
             }
-            // ----------------------------
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
             {
-                // تم استخدام strCon لضمان الاتصال الصحيح بملف Database1.mdf
                 SqlConnection con = new SqlConnection(strCon);
 
-                // بقية الكود كما هو تماماً بدون حذف
                 string query = "UPDATE Services SET ServiceName=@ServiceName, Description=@Description, Duration=@Duration, Price=@Price";
 
                 SqlCommand cmd = new SqlCommand(query, con);

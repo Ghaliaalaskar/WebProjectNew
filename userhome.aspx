@@ -11,7 +11,6 @@
         .booking-section { padding: 0 35px; }
         .booking-section h2 { color: #70677A; font-family: 'Brush Script MT', cursive; font-size: 50px; margin-bottom: 25px; }
         
-        /* تنسيق الجدول البرمجي ليكون مثل تصميمك الأصلي */
         .custom-table { width: 100%; border-collapse: separate; border-spacing: 0 12px; }
         .custom-table th { background-color: #5D5467; color: white; padding: 18px; text-align: center; font-size: 18px; }
         .custom-table td { background-color: #70677A; color: white; padding: 18px; text-align: center; font-size: 16px; border:none; }
