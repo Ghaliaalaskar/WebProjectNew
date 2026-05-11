@@ -65,7 +65,7 @@
                     <br />
                     <asp:HyperLink ID="managebookings" runat="server" CssClass="admin-link" NavigateUrl="~/ManageBookings.aspx">Manage Bookings</asp:HyperLink>
                     <br /><br /><br />
-                    <asp:HyperLink ID="logout" runat="server" CssClass="admin-link" NavigateUrl="~/Logout.aspx">Log Out</asp:HyperLink>
+                    <asp:HyperLink ID="logout" runat="server" CssClass="admin-link" NavigateUrl="~/adminlogout.aspx">Log Out</asp:HyperLink>
                 </td>
             </tr>
         </table>

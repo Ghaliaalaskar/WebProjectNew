@@ -7,7 +7,8 @@ namespace WebProjectNew
 {
     public partial class userhome : System.Web.UI.Page
     {
-        string strCon = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True";
+        // استخدام نص الاتصال من الـ Web.config أفضل لتوحيد المشروع
+        string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,8 +25,8 @@ namespace WebProjectNew
                     if (Session["Name"] != null)
                         lblUserName.Text = Session["Name"].ToString();
 
+                    // استدعاء دالة الإحصائيات فقط
                     LoadStatistics(userId);
-                    LoadTableData(userId);
                 }
             }
         }
@@ -38,15 +39,18 @@ namespace WebProjectNew
                 {
                     con.Open();
 
+                    // حساب إجمالي المواعيد
                     SqlCommand cmdTotal = new SqlCommand("SELECT COUNT(*) FROM Appointments WHERE UserID = @uid", con);
                     cmdTotal.Parameters.AddWithValue("@uid", userId);
                     int total = Convert.ToInt32(cmdTotal.ExecuteScalar());
                     lblTotal.Text = total.ToString();
 
+                    // حساب المواعيد القادمة
                     SqlCommand cmdUpcoming = new SqlCommand("SELECT COUNT(*) FROM Appointments WHERE UserID = @uid AND AppointmentDate >= GETDATE()", con);
                     cmdUpcoming.Parameters.AddWithValue("@uid", userId);
                     lblUpcoming.Text = cmdUpcoming.ExecuteScalar().ToString();
 
+                    // حساب المواعيد المكتملة (السابقة)
                     SqlCommand cmdPast = new SqlCommand("SELECT COUNT(*) FROM Appointments WHERE UserID = @uid AND AppointmentDate < GETDATE()", con);
                     cmdPast.Parameters.AddWithValue("@uid", userId);
                     lblCompleted.Text = cmdPast.ExecuteScalar().ToString();
@@ -60,23 +64,6 @@ namespace WebProjectNew
             }
         }
 
-        private void LoadTableData(string userId)
-        {
-            try
-            {
-                using (SqlConnection con = new SqlConnection(strCon))
-                {
-                    string sql = "SELECT AppointmentID, AppointmentDate FROM Appointments WHERE UserID = @uid AND AppointmentDate >= GETDATE()";
-                    SqlDataAdapter da = new SqlDataAdapter(sql, con);
-                    da.SelectCommand.Parameters.AddWithValue("@uid", userId);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    gvUpcoming.DataSource = dt;
-                    gvUpcoming.DataBind();
-                }
-            }
-            catch { }
-        }
+        // تم حذف دالة LoadTableData تماماً لأن الـ GridView لم يعد موجوداً
     }
 }

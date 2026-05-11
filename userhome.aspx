@@ -41,14 +41,7 @@
         </div>
 
         <div class="booking-section">
-            <h2>Upcoming Booking</h2>
-            <asp:GridView ID="gvUpcoming" runat="server" AutoGenerateColumns="False" CssClass="custom-table" GridLines="None" ShowHeaderWhenEmpty="true">
-                <Columns>
-                    <asp:BoundField DataField="ThemeName" HeaderText="Theme Name" />
-                    <asp:BoundField DataField="EventDate" HeaderText="Event Date" DataFormatString="{0:MMMM dd, yyyy}" />
-                   
-                </Columns>
-            </asp:GridView>
+            <h2>&nbsp;</h2>
         </div>
     </div>
 </asp:Content>
